@@ -15,7 +15,7 @@ export const metadata = {
   openGraph: {
     title: "BuyCarbonCredit - sustainable Carbon Credit Marketplace",
     description: "Empowering farmers and companies to trade carbon credits directly.",
-    url: "https://buycarboncredit.com", // Placeholder
+    url: "https://buycarboncredit.in", // Placeholder
     siteName: "BuyCarbonCredit",
     locale: "en_US",
     type: "website",
@@ -28,6 +28,15 @@ export const metadata = {
   verification: {
     google: "pHUMAzeGte1qzhQFrlM9tCAOVVtaBuHMLnEzFdZ-MCc",
   },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
   icons: {
     icon: "/favicon.png",
   },
@@ -37,6 +46,25 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.className} bg-white text-gray-900 antialiased`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "BuyCarbonCredit",
+              "url": "https://buycarboncredit.in",
+              "logo": "https://buycarboncredit.in/favicon.png",
+              "description": "Connecting farmers and companies through sustainable carbon markets.",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+91-7219111601",
+                "contactType": "customer service",
+                "email": "dhanraj.webdev@gmail.com"
+              }
+            })
+          }}
+        />
         <Navbar />
         <main className="min-h-screen">
           {children}
