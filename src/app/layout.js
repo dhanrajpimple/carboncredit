@@ -25,6 +25,12 @@ export const metadata = {
     title: "BuyCarbonCredit - Carbon Credit Marketplace",
     description: "Connecting farmers and companies through carbon markets.",
   },
+  verification: {
+    google: "pHUMAzeGte1qzhQFrlM9tCAOVVtaBuHMLnEzFdZ-MCc",
+  },
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({ children }) {
