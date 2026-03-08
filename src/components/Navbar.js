@@ -24,6 +24,9 @@ const Navbar = () => {
                         <Link href="/buy-carbon-credit" className="text-gray-600 hover:text-emerald-600 font-medium transition-colors">
                             Buy Carbon Credit
                         </Link>
+                        <Link href="/blog" className="text-gray-600 hover:text-emerald-600 font-medium transition-colors">
+                            Blog
+                        </Link>
                         <Link href="/contact" className="text-gray-600 hover:text-emerald-600 font-medium transition-colors">
                             Contact
                         </Link>
@@ -64,6 +67,13 @@ const Navbar = () => {
                             onClick={() => setIsOpen(false)}
                         >
                             Buy Carbon Credit
+                        </Link>
+                        <Link
+                            href="/blog"
+                            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-emerald-600 hover:bg-emerald-50"
+                            onClick={() => setIsOpen(false)}
+                        >
+                            Blog
                         </Link>
                         <Link
                             href="/contact"
