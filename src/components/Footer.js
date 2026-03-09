@@ -52,7 +52,7 @@ const Footer = () => {
                 </div>
                 <div className="mt-12 pt-8 border-t border-gray-200 text-center flex flex-col items-center gap-4">
                     <p className="text-gray-500 text-sm">
-                        © {new Date().getFullYear()} BuyCarbonCredit – Connecting Farmers and Companies Through Carbon Markets
+                        © 2026 BuyCarbonCredit – Connecting Farmers and Companies Through Carbon Markets
                     </p>
                     <div className="flex gap-4">
                         <Link href="/terms" className="text-gray-400 hover:text-emerald-600 text-xs transition-colors">
