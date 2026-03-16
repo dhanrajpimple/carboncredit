@@ -51,7 +51,7 @@ export default function ContactPage() {
                     </h1>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
                         Farmers can register their farms to sell carbon credits. Fill out the form below and we&apos;ll help you get started with verification and listing.
-                        <strong> A one-time registration fee of ₹499 is applicable for every farm listing.</strong>
+                        <strong> A one-time registration fee of ₹199 is applicable for every farm listing.</strong>
                     </p>
                 </header>
 

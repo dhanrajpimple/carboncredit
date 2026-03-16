@@ -1,0 +1,195 @@
+"use strict";
+
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import blogs from "@/data/blogs.json";
+
+export async function generateStaticParams() {
+    return blogs.map((post) => ({
+        id: post.id,
+    }));
+}
+
+export async function generateMetadata({ params }) {
+    // Await params here (Next.js 15+ convention for server components/dynamic routes)
+    const resolvedParams = await Promise.resolve(params);
+    const post = blogs.find((p) => p.id === resolvedParams.id);
+    
+    if (!post) {
+        return { title: "Blog Not Found" };
+    }
+
+    return {
+        title: `${post.title} | BuyCarbonCredit.in`,
+        description: post.excerpt,
+        keywords: post.keywords?.join(", "),
+        alternates: {
+            canonical: `https://buycarboncredit.in/blog/${post.id}`,
+        },
+        openGraph: {
+            title: post.title,
+            description: post.excerpt,
+            url: `https://buycarboncredit.in/blog/${post.id}`,
+            type: "article",
+            publishedTime: post.date,
+            authors: ["BuyCarbonCredit"],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: post.title,
+            description: post.excerpt,
+        },
+    };
+}
+
+export default async function BlogPostPage({ params }) {
+    // Await params
+    const resolvedParams = await Promise.resolve(params);
+    const post = blogs.find((p) => p.id === resolvedParams.id);
+
+    if (!post) {
+        notFound();
+    }
+
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": post.title,
+        "description": post.excerpt,
+        "author": {
+            "@type": "Organization",
+            "name": "BuyCarbonCredit",
+            "url": "https://buycarboncredit.in"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "BuyCarbonCredit",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://buycarboncredit.in/favicon.png"
+            }
+        },
+        "datePublished": post.date,
+        "dateModified": post.date,
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": `https://buycarboncredit.in/blog/${post.id}`
+        },
+        "keywords": post.keywords?.join(", "),
+        "inLanguage": post.lang,
+        "articleBody": post.content
+    };
+
+    return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <article className="bg-white min-h-screen py-16" itemScope itemType="https://schema.org/Article">
+                <meta itemProp="datePublished" content={post.date} />
+                <meta itemProp="inLanguage" content={post.lang} />
+                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    {/* Back button */}
+                    <div className="mb-8">
+                        <Link href="/blog" className="inline-flex items-center text-emerald-600 font-medium hover:text-emerald-700 transition-colors">
+                            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+                            Back to Blog
+                        </Link>
+                    </div>
+
+                    <header className="mb-12">
+                        <div className="flex flex-wrap items-center gap-4 mb-6">
+                            <span className="bg-emerald-50 text-emerald-700 border border-emerald-200 px-3 py-1 rounded-full text-sm font-bold tracking-wide uppercase">
+                                {post.category}
+                            </span>
+                            <span className="text-gray-500 text-sm font-medium">Published: {post.date}</span>
+                            {post.readTime && (
+                                <span className="text-gray-500 text-sm font-medium">⏳ {post.readTime} read</span>
+                            )}
+                        </div>
+
+                        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-6" itemProp="headline">
+                            {post.title}
+                        </h1>
+
+                        <p className="text-xl text-gray-600 leading-relaxed max-w-3xl" itemProp="description">
+                            {post.excerpt}
+                        </p>
+                    </header>
+
+                    {/* Author & Share (placeholder for AI searches context) */}
+                    <div className="flex items-center justify-between py-6 border-y border-gray-100 mb-10">
+                        <div className="flex items-center gap-3">
+                            <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 font-bold text-xl">
+                                BCC
+                            </div>
+                            <div>
+                                <p className="font-bold text-gray-900" itemProp="author" itemScope itemType="https://schema.org/Organization">
+                                    <span itemProp="name">BuyCarbonCredit Team</span>
+                                </p>
+                                <p className="text-sm text-gray-500">Marketplace Experts</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Main Content */}
+                    <div 
+                        className="prose prose-lg prose-emerald max-w-none mb-16"
+                        itemProp="articleBody"
+                    >
+                        {/* If we strictly have markdown strings or HTML, we could parse it, but for now we format it nicely */}
+                        {post.content.replace(/\\n/g, '\n').split("\n\n").map((paragraph, idx) => {
+                            if (paragraph.startsWith("## ")) {
+                                return <h2 key={idx} className="text-3xl font-bold mt-10 mb-4 text-gray-900">{paragraph.replace("## ", "")}</h2>;
+                            }
+                            if (paragraph.startsWith("### ")) {
+                                return <h3 key={idx} className="text-2xl font-bold mt-8 mb-3 text-gray-900">{paragraph.replace("### ", "")}</h3>;
+                            }
+                            if (paragraph.startsWith("- ")) {
+                                return (
+                                    <ul key={idx} className="list-disc list-inside my-4 text-gray-700 leading-relaxed">
+                                        {paragraph.split("\n").map((li, i) => <li key={i}>{li.replace("- ", "")}</li>)}
+                                    </ul>
+                                );
+                            }
+                            return <p key={idx} className="text-gray-700 leading-relaxed mb-6">{paragraph}</p>;
+                        })}
+                    </div>
+
+                    {/* SEO Tags */}
+                    {post.keywords && post.keywords.length > 0 && (
+                        <div className="border-t border-gray-100 pt-8 mt-12 mb-16">
+                            <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4">Related Topics in this Article</h3>
+                            <div className="flex flex-wrap gap-2">
+                                {post.keywords.map(kw => (
+                                    <span key={kw} className="bg-gray-50 text-gray-600 border border-gray-200 px-3 py-1.5 rounded-full text-sm font-medium">
+                                        {kw}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+
+                    {/* CTA */}
+                    <div className="bg-emerald-600 rounded-3xl p-8 md:p-12 text-center text-white shadow-xl">
+                        <h2 className="text-3xl font-bold mb-4">Ready to Earn from Carbon Credits?</h2>
+                        <p className="text-emerald-100 mb-8 max-w-2xl mx-auto text-lg hover:text-white transition-colors">
+                            Join thousands of Indian farmers generating ₹50,000+ per year. 
+                            Companies can directly purchase verified offsets to meet ESG goals.
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                            <Link href="/contact" className="px-8 py-3 bg-white text-emerald-600 rounded-xl font-bold hover:bg-emerald-50 transition-colors">
+                                Register Your Farm
+                            </Link>
+                            <Link href="/buy-carbon-credit" className="px-8 py-3 bg-emerald-800 text-white rounded-xl font-bold hover:bg-emerald-900 border border-emerald-700 transition-colors">
+                                Buy Carbon Credits
+                            </Link>
+                        </div>
+                    </div>
+
+                </div>
+            </article>
+        </>
+    );
+}

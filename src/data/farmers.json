@@ -1,62 +1,15 @@
 [
     {
         "id": "1",
-        "name": "Rajesh Patil",
+        "name": "Dhanraj Patil",
         "country": "India",
         "state": "Maharashtra",
         "district": "Satara",
-        "pincode": "415001",
-        "phone": "+919000011111",
-        "email": "rajesh.patil@example.com",
-        "land_acres": 50,
-        "carbon_credits": 120
-    },
-    {
-        "id": "2",
-        "name": "John Doe",
-        "country": "USA",
-        "state": "Iowa",
-        "district": "Story",
-        "pincode": "50010",
-        "phone": "+15550123456",
-        "email": "john.doe@example.com",
-        "land_acres": 200,
-        "carbon_credits": 450
-    },
-    {
-        "id": "3",
-        "name": "Maria Garcia",
-        "country": "Brazil",
-        "state": "Mato Grosso",
-        "district": "Sorriso",
-        "pincode": "78890",
-        "phone": "+5566999887766",
-        "email": "maria.garcia@example.com",
-        "land_acres": 150,
-        "carbon_credits": 380
-    },
-    {
-        "id": "4",
-        "name": "Amit Sharma",
-        "country": "India",
-        "state": "Maharashtra",
-        "district": "Pune",
-        "pincode": "411001",
-        "phone": "+919988776655",
-        "email": "amit.sharma@example.com",
-        "land_acres": 30,
-        "carbon_credits": 75
-    },
-    {
-        "id": "5",
-        "name": "Sarah Miller",
-        "country": "USA",
-        "state": "Iowa",
-        "district": "Polk",
-        "pincode": "50301",
-        "phone": "+15559876543",
-        "email": "sarah.miller@example.com",
-        "land_acres": 120,
-        "carbon_credits": 300
+        "pincode": "415014",
+        "phone": "+919146890521",
+        "email": "dhanrajpimple16012001@gmail.com",
+        "land_acres": 25,
+        "carbon_credits": 50
     }
+  
 ]

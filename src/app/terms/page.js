@@ -26,7 +26,7 @@ export default function TermsPage() {
                     <section>
                         <h2 className="text-2xl font-bold text-gray-900 mb-4">3. Farmer Registration Fees</h2>
                         <p>
-                            To maintain the quality of our marketplace and cover administrative costs, we charge a <strong>one-time registration fee of ₹499</strong> for every farm listing.
+                            To maintain the quality of our marketplace and cover administrative costs, we charge a <strong>one-time registration fee of ₹199</strong> for every farm listing.
                         </p>
                         <ul className="list-disc pl-6 space-y-2">
                             <li>Fees are non-refundable once the farm is listed on our platform.</li>
