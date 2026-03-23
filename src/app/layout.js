@@ -466,6 +466,8 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5017050359206389"
+     crossOrigin="anonymous"></script>
       </head>
       <body className={`${inter.className} bg-white text-gray-900 antialiased`}>
         <Navbar />
