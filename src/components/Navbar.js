@@ -5,30 +5,42 @@ import { useState } from "react";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [toolsOpen, setToolsOpen] = useState(false);
+
+    const close = () => { setIsOpen(false); setToolsOpen(false); };
 
     return (
-        <nav className="bg-white border-b border-gray-100 sticky top-0 z-50">
+        <nav className="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-16 items-center">
                     <div className="flex-shrink-0">
-                        <Link href="/" className="text-2xl font-bold text-emerald-600 tracking-tight">
-                            BuyCarbonCredit
+                        <Link href="/" className="text-xl font-bold text-emerald-600 tracking-tight" onClick={close}>
+                            🌱 BuyCarbonCredit
                         </Link>
                     </div>
 
                     {/* Desktop Menu */}
-                    <div className="hidden md:flex space-x-8">
-                        <Link href="/" className="text-gray-600 hover:text-emerald-600 font-medium transition-colors">
+                    <div className="hidden md:flex items-center space-x-1">
+                        <Link href="/" className="px-3 py-2 text-gray-600 hover:text-emerald-600 font-medium transition-colors rounded-lg hover:bg-emerald-50">
                             Home
                         </Link>
-                        <Link href="/buy-carbon-credit" className="text-gray-600 hover:text-emerald-600 font-medium transition-colors">
-                            Buy Carbon Credit
+                        <Link href="/buy-carbon-credit" className="px-3 py-2 text-gray-600 hover:text-emerald-600 font-medium transition-colors rounded-lg hover:bg-emerald-50">
+                            Buy Credits
                         </Link>
-                        <Link href="/blog" className="text-gray-600 hover:text-emerald-600 font-medium transition-colors">
+                        <Link href="/carbon-credit-price" className="px-3 py-2 text-gray-600 hover:text-emerald-600 font-medium transition-colors rounded-lg hover:bg-emerald-50">
+                            💹 Prices
+                        </Link>
+                        <Link href="/carbon-credit-calculator" className="px-3 py-2 text-gray-600 hover:text-emerald-600 font-medium transition-colors rounded-lg hover:bg-emerald-50">
+                            🧮 Calculator
+                        </Link>
+                        <Link href="/blog" className="px-3 py-2 text-gray-600 hover:text-emerald-600 font-medium transition-colors rounded-lg hover:bg-emerald-50">
                             Blog
                         </Link>
-                        <Link href="/contact" className="text-gray-600 hover:text-emerald-600 font-medium transition-colors">
-                            Contact
+                        <Link
+                            href="/contact"
+                            className="ml-2 px-5 py-2 bg-emerald-600 text-white rounded-xl font-bold hover:bg-emerald-700 transition-all shadow-sm shadow-emerald-200"
+                        >
+                            Register Farm →
                         </Link>
                     </div>
 
@@ -36,7 +48,8 @@ const Navbar = () => {
                     <div className="md:hidden">
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="text-gray-600 hover:text-emerald-600 focus:outline-none"
+                            className="text-gray-600 hover:text-emerald-600 focus:outline-none p-2"
+                            aria-label="Toggle menu"
                         >
                             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 {isOpen ? (
@@ -52,36 +65,25 @@ const Navbar = () => {
 
             {/* Mobile Menu */}
             {isOpen && (
-                <div className="md:hidden bg-white border-b border-gray-100">
-                    <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                        <Link
-                            href="/"
-                            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-emerald-600 hover:bg-emerald-50"
-                            onClick={() => setIsOpen(false)}
-                        >
-                            Home
-                        </Link>
-                        <Link
-                            href="/buy-carbon-credit"
-                            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-emerald-600 hover:bg-emerald-50"
-                            onClick={() => setIsOpen(false)}
-                        >
-                            Buy Carbon Credit
-                        </Link>
-                        <Link
-                            href="/blog"
-                            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-emerald-600 hover:bg-emerald-50"
-                            onClick={() => setIsOpen(false)}
-                        >
-                            Blog
-                        </Link>
-                        <Link
-                            href="/contact"
-                            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-emerald-600 hover:bg-emerald-50"
-                            onClick={() => setIsOpen(false)}
-                        >
-                            Contact
-                        </Link>
+                <div className="md:hidden bg-white border-b border-gray-100 shadow-lg">
+                    <div className="px-4 pt-2 pb-4 space-y-1">
+                        {[
+                            { href: "/", label: "🏠 Home" },
+                            { href: "/buy-carbon-credit", label: "🛒 Buy Carbon Credits" },
+                            { href: "/carbon-credit-price", label: "💹 Carbon Credit Prices 2026" },
+                            { href: "/carbon-credit-calculator", label: "🧮 Carbon Credit Calculator" },
+                            { href: "/blog", label: "📖 Blog & Guides" },
+                            { href: "/contact", label: "✅ Register Your Farm" },
+                        ].map(item => (
+                            <Link
+                                key={item.href}
+                                href={item.href}
+                                className="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 transition-all"
+                                onClick={close}
+                            >
+                                {item.label}
+                            </Link>
+                        ))}
                     </div>
                 </div>
             )}

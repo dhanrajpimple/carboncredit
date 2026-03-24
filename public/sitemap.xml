@@ -28,10 +28,26 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Carbon Credit Calculator — High Traffic Tool -->
+  <url>
+    <loc>https://buycarboncredit.in/carbon-credit-calculator</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Carbon Credit Price India 2026 — High Traffic Page -->
+  <url>
+    <loc>https://buycarboncredit.in/carbon-credit-price</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
   <!-- Blog Index Page -->
   <url>
     <loc>https://buycarboncredit.in/blog</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
@@ -189,7 +205,35 @@
 
   <url>
     <loc>https://buycarboncredit.in/blog/small-farm-carbon-credits</loc>
-    <lastmod>2026-02-19</lastmod>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+  </url>
+
+  <url>
+    <loc>https://buycarboncredit.in/blog/carbon-credit-calculator-guide</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://buycarboncredit.in/blog/ccts-india-carbon-credit-scheme-2026</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://buycarboncredit.in/blog/carbon-credit-madhya-pradesh-bihar-assam</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://buycarboncredit.in/blog/carbon-credit-vs-renewable-energy-certificate</loc>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
