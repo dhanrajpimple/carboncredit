@@ -80,12 +80,70 @@ export default async function BlogPostPage({ params }) {
         "articleBody": post.content
     };
 
+    // BreadcrumbList schema for rich snippets in Google
+    const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://buycarboncredit.in"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://buycarboncredit.in/blog"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": post.title.split("|")[0].trim(),
+                "item": `https://buycarboncredit.in/blog/${post.id}`
+            }
+        ]
+    };
+
+    // Auto-detect FAQ pairs from content for FAQ schema
+    const contentText = post.content.replace(/\\n/g, '\n');
+    const faqPairs = [];
+    const faqRegex = /\*\*Q[:\s]*(.+?)\*\*\s*\n\s*A[:\s]*(.+?)(?=\n\n|\*\*Q|$)/gs;
+    let match;
+    while ((match = faqRegex.exec(contentText)) !== null) {
+        faqPairs.push({ question: match[1].trim(), answer: match[2].trim() });
+    }
+
+    const faqSchema = faqPairs.length > 0 ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqPairs.map(faq => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
+            }
+        }))
+    } : null;
+
     return (
         <>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+            />
+            {faqSchema && (
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+                />
+            )}
             <article className="bg-white min-h-screen py-16" itemScope itemType="https://schema.org/Article">
                 <meta itemProp="datePublished" content={post.date} />
                 <meta itemProp="inLanguage" content={post.lang} />
