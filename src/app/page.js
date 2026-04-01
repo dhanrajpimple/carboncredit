@@ -1,32 +1,24 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 
 export const metadata = {
-  title: "Buy & Sell Carbon Credits from Farmers in India | कार्बन क्रेडिट मार्केटप्लेस | ₹50,000+/year",
-  description: "India's #1 carbon credit marketplace. Farmers earn ₹50,000+/year by selling verified carbon credits. Companies buy carbon offsets for ESG, CSR & net-zero goals. Register free. कार्बन क्रेडिट बेचें खरीदें। Maharashtra, UP, Gujarat, Punjab & all India.",
+  title: "Buy & Sell Carbon Credits India | Farmer Registration | BuyCarbonCredit.in",
+  description: "India's #1 carbon credit marketplace. Farmers earn ₹50,000+/year. Companies meet ESG & net-zero goals. Carbon credit price ₹500–₹4000/ton. Register free — all Indian states.",
   keywords: [
-    "buy carbon credit India",
-    "sell carbon credit India",
-    "carbon credit marketplace India",
-    "carbon credit farmers India",
-    "carbon credit price India 2026",
-    "carbon credit income farmers",
-    "carbon credit registration India",
-    "कार्बन क्रेडिट बेचें",
-    "कार्बन क्रेडिट खरीदें",
-    "शेतकरी कार्बन क्रेडिट",
-    "carbon offset companies India",
-    "verified carbon credits",
-    "net zero India",
-    "ESG carbon credits",
-    "sustainable farming income",
-    "carbon trading India",
-    "regenerative agriculture",
-    "soil carbon sequestration",
-    "1 carbon credit price rupees",
-    "carbon credit per acre India"
+    "buy carbon credits india",
+    "carbon credit price india",
+    "carbon credit registration farmers",
+    "sell carbon credits india",
+    "carbon credit marketplace india",
   ],
   alternates: {
-    canonical: "https://buycarboncredit.in",
+    canonical: "https://buycarboncredit.in/",
+  },
+  openGraph: {
+    title: "Buy & Sell Carbon Credits India | BuyCarbonCredit.in",
+    description: "India's #1 carbon credit marketplace connecting farmers with companies. Earn ₹50,000+ per year from sustainable farming.",
+    url: "https://buycarboncredit.in/",
+    type: "website",
+    locale: "en_IN",
   },
 };
 
@@ -50,6 +42,81 @@ const homePageSchema = {
   }
 };
 
+const homeFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the carbon credit price in India per acre in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In India, a farmer can earn approximately ₹5,000 to ₹10,000 per acre per year from carbon credits in 2026. One acre of sustainable farmland generates roughly 0.5 to 2 carbon credits annually, at a market price of ₹500 to ₹4,000 per credit. Earnings depend on the farming practice: organic farming, agroforestry, and no-till farming earn the most."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to earn carbon credits in India as a farmer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Indian farmers can earn carbon credits by adopting sustainable farming practices such as no-till farming, organic farming, agroforestry, or cover cropping. The process: (1) Register your farm on BuyCarbonCredit.in for free, (2) Get your land verified for carbon sequestration, (3) Your carbon credits are listed on the marketplace, (4) Companies buy your credits directly. Minimum land required: 1 acre. All Indian states are eligible."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to buy carbon credits in India for companies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Companies can buy carbon credits in India directly from verified Indian farmers on BuyCarbonCredit.in. Browse listings by state, farming type, and volume. Purchase verified carbon offset certificates for ESG, CSR, and BRSR compliance. Scope 1, 2, and 3 emissions covered. Bulk purchases available. No middlemen — direct farmer-to-company transactions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to register for carbon credits in India?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To register for carbon credits in India: (1) Visit BuyCarbonCredit.in/contact and fill the free registration form, (2) Submit your land details — area, location, and current farming practice, (3) Our team verifies your land and sustainable practices, (4) Once verified, your carbon credits are listed and ready for sale. Registration is completely free. Farmers with as little as 1 acre can register."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is 1 ton carbon credit price in India?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In India's voluntary carbon market, 1 ton of carbon credit (equivalent to 1 metric ton of CO₂ removed) is priced between ₹500 and ₹4,000 in 2026. Agricultural carbon credits from Indian farmers typically trade at ₹800–₹2,500 per ton. Globally, carbon credit prices range from $5 to $50 per ton (₹415–₹4,150). Premium verified credits (VCS, Gold Standard) command higher prices."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much carbon credit can I earn from 1 acre in India?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "From 1 acre of farmland in India, you can earn approximately 0.5 to 2 carbon credits per year depending on your farming practice. At current market rates of ₹500–₹4,000 per credit, that translates to ₹250–₹8,000 per acre per year from carbon credits alone. Agroforestry generates more credits than standard crop farming. Register on BuyCarbonCredit.in to get a personalised estimate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where to sell carbon credits in India?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Indian farmers can sell carbon credits on BuyCarbonCredit.in — India's dedicated carbon credit marketplace. The platform connects farmers directly with companies buying carbon offsets for ESG, CSR, and net-zero compliance. There are no middlemen: farmers receive the full payment. Registration is free, and farmers from all 28 Indian states are eligible."
+      }
+    }
+  ]
+};
+
+const homeWebsiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "BuyCarbonCredit.in",
+  "url": "https://buycarboncredit.in/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://buycarboncredit.in/blog?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+};
+
 const KEY_STATS = [
   { value: "₹50,000+", label: "Avg. Farmer Annual Income", sub: "per year from carbon credits" },
   { value: "₹500–₹4000", label: "Carbon Credit Price", sub: "per metric ton (1 carbon credit)" },
@@ -64,39 +131,20 @@ const STATES = [
   "Chhattisgarh", "Assam", "Kerala", "Himachal Pradesh", "Uttarakhand"
 ];
 
-const KEYWORD_TAGS = [
-  // English
-  "carbon credit", "sell carbon credit", "buy carbon credits India",
-  "carbon credit price India", "carbon credit marketplace", "carbon offset India",
-  "voluntary carbon market", "ESG carbon credits", "net zero India",
-  "soil carbon sequestration", "regenerative agriculture", "carbon farming",
-  "verified carbon credits", "carbon credit registration", "carbon credit income",
-  "sustainable farming", "organic farming carbon", "agricultural carbon credits",
-  "carbon credit per acre", "paddy carbon credit", "wheat carbon credit",
-  // Hindi
-  "कार्बन क्रेडिट", "कार्बन क्रेडिट क्या है", "कार्बन क्रेडिट कैसे बेचें",
-  "किसान कार्बन क्रेडिट", "कार्बन क्रेडिट की कीमत", "टिकाऊ खेती",
-  "जैविक खेती कार्बन", "carbon credit ki puri jankari", "कार्बन ऑफसेट",
-  // Marathi
-  "कार्बन क्रेडिट मराठी", "शेतकरी कार्बन क्रेडिट", "शाश्वत शेती",
-  "कार्बन क्रेडिट नोंदणी", "महाराष्ट्र कार्बन क्रेडिट", "मृदा कार्बन",
-  // Regional
-  "ગુજરાત કાર્બન ક్రెడిట", "ਪੰਜਾਬ ਕਾਰਬਨ", "కార్బన్ క్రెడిట్ తెలంగాణ",
-  "ಕಾರ್ಬನ್ ಕ್ರೆಡಿಟ್ ಕರ್ನಾಟಕ", "கார்பன் கிரெடிட் தமிழ்நாடு",
-  // Long-tail
-  "how to sell carbon credits in India", "carbon credit per acre income India",
-  "how much does 1 carbon credit cost in India", "carbon credit for small farmers",
-  "can I earn from carbon credit with 1 acre", "carbon credit verification India",
-  "CCTS India carbon credit scheme", "VCS Gold Standard carbon India",
-  "buy carbon offsets from Indian farmers", "corporate carbon neutral India"
-];
-
 export default function Home() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homePageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeWebsiteSchema) }}
       />
       <div className="flex flex-col gap-20 pb-20">
 
@@ -108,7 +156,7 @@ export default function Home() {
                 India&apos;s #1 Carbon Credit Marketplace | कार्बन क्रेडिट मार्केटप्लेस
               </p>
               <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 tracking-tight mb-6 leading-tight">
-                Buy and Sell <span className="text-emerald-600">Carbon Credits</span> Directly from Indian Farmers
+                Buy and Sell Carbon Credits in India | <span className="text-emerald-600">कार्बन क्रेडिट मार्केटप्लेस</span>
               </h1>
               <p className="text-lg md:text-xl text-gray-600 mb-4 leading-relaxed">
                 Connect companies seeking <strong>carbon offsets</strong> with verified farmers generating <strong>soil carbon credits</strong> through sustainable agriculture across India.
@@ -141,6 +189,18 @@ export default function Home() {
               <path fill="#059669" d="M45.5,-75.4C58.8,-68.8,69.5,-56.3,77.3,-42.4C85,-28.5,89.7,-13.2,88,-0.9C86.4,11.3,78.3,20.6,71.2,30.3C64.1,40,58,50.1,49.2,59.2C40.3,68.4,28.6,76.6,15.6,79C2.7,81.4,-11.5,78,-25.1,72.9C-38.7,67.7,-51.7,60.8,-62.4,50.8C-73.1,40.8,-81.4,27.7,-84.3,13.6C-87.2,-0.5,-84.7,-15.6,-77.9,-29.4C-71.1,-43.3,-60,-55.8,-47.1,-62.7C-34.1,-69.5,-19.4,-70.7,-3.7,-64.3C11.9,-57.9,23.8,-43.8,32.2,-31.6C40.6,-19.4,45.5,-9.7,45.5,0L45.5,-75.4Z" transform="translate(100 100)" />
             </svg>
           </div>
+        </section>
+
+        {/* ─── Price Band ─── */}
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3">Carbon Credit Price in India 2026 — ₹500 to ₹4000 Per Ton</h2>
+          <p className="text-gray-600 mb-2">
+            Live voluntary market range for 2026: soil carbon ₹500–₹2,500, agroforestry ₹1,500–₹4,000, premium verified credits up to ₹4,000 per ton.
+            Check monthly updates on the <Link href="/carbon-credit-price" className="text-emerald-600 font-semibold hover:underline">Carbon Credit Price</Link> page.
+          </p>
+          <p className="text-sm text-gray-500">
+            Price bands are updated monthly based on BuyCarbonCredit.in transactions across Maharashtra, Punjab, Karnataka, Gujarat, and Telangana.
+          </p>
         </section>
 
         {/* ─── Key Stats ─── */}
@@ -178,7 +238,7 @@ export default function Home() {
             <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mb-6">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
             </div>
-            <h2 className="text-2xl font-bold mb-3">For Farmers | किसानों के लिए | शेतकऱ्यांसाठी</h2>
+            <h2 className="text-2xl font-bold mb-3">How to Earn Carbon Credits in India (For Farmers)</h2>
             <p className="text-gray-600 mb-4">
               Register your farmland and turn <strong>sustainable agricultural practices</strong> into a new revenue stream. Earn <strong>₹50,000+ per year</strong> by selling verified <strong>soil carbon credits</strong> to companies worldwide.
             </p>
@@ -194,7 +254,7 @@ export default function Home() {
             <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
             </div>
-            <h2 className="text-2xl font-bold mb-3">For Companies | कंपनियों के लिए | कंपन्यांसाठी</h2>
+            <h2 className="text-2xl font-bold mb-3">How to Buy Carbon Credits in India (For Companies)</h2>
             <p className="text-gray-600 mb-4">
               Meet your <strong>net-zero goals</strong>, <strong>ESG targets</strong>, and <strong>CSR obligations</strong> by purchasing high-quality, <strong>verified carbon credits</strong> directly from Indian farmers. Support local communities, get transparent carbon offset certificates.
             </p>
@@ -211,16 +271,16 @@ export default function Home() {
         {/* ─── How It Works ─── */}
         <section className="bg-gray-50 py-20" aria-labelledby="how-it-works">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 id="how-it-works" className="text-3xl md:text-4xl font-bold text-center mb-4">How Carbon Credits Work in India</h2>
+            <h2 id="how-it-works" className="text-3xl md:text-4xl font-bold text-center mb-4">Carbon Credit Registration Process for Farmers</h2>
             <p className="text-center text-gray-500 max-w-2xl mx-auto mb-16">
-              भारत में कार्बन क्रेडिट कैसे काम करता है? | भारतात कार्बन क्रेडिट कसे काम करते?
+              Register → Verify → List → Sell → Get Paid. भारत में किसान कार्बन क्रेडिट कैसे रजिस्टर करें? महाराष्ट्रात शेतकरी कार्बन क्रेडिट नोंदणी कशी करावी?
             </p>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {[
-                { step: "Step 1", title: "Farm Registration", desc: "Farmers register their farm details, land area, location, and sustainable practices. Free registration. मुफ्त पंजीकरण।" },
-                { step: "Step 2", title: "Verification", desc: "Carbon credits are generated through verified sustainable farming — no-till, organic, agroforestry. VCS/Gold Standard verified." },
-                { step: "Step 3", title: "List & Market", desc: "Verified carbon credits are listed on the marketplace. Companies browse by state, crop type, and credit volume." },
-                { step: "Step 4", title: "Direct Deal & Pay", desc: "Buyers and sellers connect directly. No middlemen. Farmers get paid directly. Carbon offset certificates issued." }
+                { step: "Step 1", title: "Fill Free Form", desc: "Submit name, mobile, village, district, acres, and practice at BuyCarbonCredit.in/contact. न्यूनतम 1 एकड़।" },
+                { step: "Step 2", title: "Upload Documents", desc: "Send 7/12 extract, Aadhaar, and farm photos on WhatsApp or web. Documents stay private." },
+                { step: "Step 3", title: "Verification (7–14 days)", desc: "Field or remote check confirms acreage and practice (no-till, organic, agroforestry, cover crop, improved rice)." },
+                { step: "Step 4", title: "List & Get Paid", desc: "Credits go live with per-acre price. Companies buy directly; payment reaches your bank with certificate issued to buyer." }
               ].map((item, idx) => (
                 <div key={idx} className="bg-white p-8 rounded-2xl shadow-sm relative">
                   <span className="text-emerald-600 font-bold text-sm uppercase tracking-widest mb-2 block">{item.step}</span>
@@ -302,9 +362,59 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ─── Per Acre Earnings ─── */}
+        <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8" aria-labelledby="per-acre-earnings">
+          <h2 id="per-acre-earnings" className="text-3xl md:text-4xl font-bold mb-4">Carbon Credit Per Acre — How Much Can You Earn?</h2>
+          <p className="text-gray-600 mb-4">
+            1 acre of Indian farmland generates roughly 0.5–3 carbon credits a year depending on practice. No-till: ₹640–₹3,750/acre/year. Organic: ₹1,000–₹8,000. Agroforestry: ₹2,250–₹12,000. Use the <Link href="/carbon-credit-calculator" className="text-emerald-600 font-semibold hover:underline">Carbon Credit Calculator</Link> for a precise quote and see the full table on the <Link href="/carbon-credit-price-per-acre" className="text-emerald-600 font-semibold hover:underline">per-acre pricing page</Link>.
+          </p>
+          <div className="bg-white border border-gray-100 rounded-3xl shadow-sm p-6 md:p-8">
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <h3 className="font-bold text-lg mb-2">Quick Per-Acre Table</h3>
+                <table className="w-full text-sm border border-gray-100 rounded-xl overflow-hidden">
+                  <thead className="bg-emerald-50 text-emerald-700 font-bold">
+                    <tr>
+                      <th className="px-3 py-2 text-left">Practice</th>
+                      <th className="px-3 py-2 text-center">Credits/acre</th>
+                      <th className="px-3 py-2 text-center">Income (₹/acre/yr)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      { practice: "No-Till", credits: "0.8–1.5", income: "₹640–₹3,750" },
+                      { practice: "Organic", credits: "1.0–2.0", income: "₹1,000–₹8,000" },
+                      { practice: "Agroforestry", credits: "1.5–3.0", income: "₹2,250–₹12,000" },
+                      { practice: "Cover Crop", credits: "0.5–1.0", income: "₹250–₹1,500" },
+                    ].map((row, i) => (
+                      <tr key={row.practice} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                        <td className="px-3 py-2 font-semibold text-gray-800">{row.practice}</td>
+                        <td className="px-3 py-2 text-center text-gray-600">{row.credits}</td>
+                        <td className="px-3 py-2 text-center text-emerald-700 font-bold">{row.income}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="bg-emerald-50 border border-emerald-100 rounded-2xl p-6">
+                <h3 className="font-bold text-lg mb-3">Income Example</h3>
+                <p className="text-gray-700 mb-2">
+                  A Maharashtra farmer with 5 acres practising no-till earns <strong>5 × 1.2 credits × ₹1,500 = ₹9,000/year</strong> in carbon credit income (extra to crop revenue).
+                </p>
+                <p className="text-gray-700 mb-2">
+                  Telangana agroforestry plot (3 acres of mango + millets) at 2.2 credits/acre and ₹2,200/credit → <strong>3 × 2.2 × 2,200 = ₹14,520/year</strong>.
+                </p>
+                <p className="text-gray-600 text-sm">
+                  Bundle acres with your FPO to get better monitoring rates and faster payouts.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ─── FAQ Quick Section ─── */}
         <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8" aria-labelledby="faq-section">
-          <h2 id="faq-section" className="text-3xl font-bold text-center mb-4">Frequently Asked Questions</h2>
+          <h2 id="faq-section" className="text-3xl font-bold text-center mb-4">Frequently Asked Questions on Carbon Credits</h2>
           <p className="text-center text-gray-500 mb-12">
             कार्बन क्रेडिट के बारे में सामान्य सवाल | कार्बन क्रेडिट बद्दल सामान्य प्रश्न
           </p>
@@ -381,19 +491,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ─── Invisible SEO Keyword Block (screen-reader accessible, search bot visible) ─── */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 border-t border-gray-100" aria-label="Popular Search Topics">
-          <h2 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-6">Popular Search Topics on Carbon Credits</h2>
-          <div className="flex flex-wrap gap-2">
-            {KEYWORD_TAGS.map(tag => (
-              <span key={tag} className="text-xs text-gray-400 bg-gray-50 border border-gray-100 px-3 py-1 rounded-full">
-                {tag}
-              </span>
-            ))}
-          </div>
-        </section>
-
       </div>
     </>
   );
 }
+

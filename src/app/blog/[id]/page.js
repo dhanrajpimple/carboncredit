@@ -42,6 +42,20 @@ export async function generateMetadata({ params }) {
     };
 }
 
+const linkify = (text) => {
+    const replacements = [
+        { regex: /\b(price|prices|rate|rates)\b/gi, href: "/carbon-credit-price" },
+        { regex: /\b(register|registration)\b/gi, href: "/carbon-credit-registration" },
+        { regex: /\b(sell|selling)\b/gi, href: "/how-to-sell-carbon-credits-india" },
+        { regex: /\b(per acre|1 acre|one acre)\b/gi, href: "/carbon-credit-price-per-acre" },
+        { regex: /\b(calculator|calculate)\b/gi, href: "/carbon-credit-calculator" },
+    ];
+    return replacements.reduce(
+        (acc, rep) => acc.replace(rep.regex, (match) => `<a href="${rep.href}" class="text-emerald-600 font-semibold hover:underline">${match}</a>`),
+        text
+    );
+};
+
 export default async function BlogPostPage({ params }) {
     // Await params
     const resolvedParams = await Promise.resolve(params);
@@ -207,11 +221,19 @@ export default async function BlogPostPage({ params }) {
                             if (paragraph.startsWith("- ")) {
                                 return (
                                     <ul key={idx} className="list-disc list-inside my-4 text-gray-700 leading-relaxed">
-                                        {paragraph.split("\n").map((li, i) => <li key={i}>{li.replace("- ", "")}</li>)}
+                                        {paragraph.split("\n").map((li, i) => (
+                                            <li key={i} dangerouslySetInnerHTML={{ __html: linkify(li.replace("- ", "")) }} />
+                                        ))}
                                     </ul>
                                 );
                             }
-                            return <p key={idx} className="text-gray-700 leading-relaxed mb-6">{paragraph}</p>;
+                            return (
+                                <p
+                                    key={idx}
+                                    className="text-gray-700 leading-relaxed mb-6"
+                                    dangerouslySetInnerHTML={{ __html: linkify(paragraph) }}
+                                />
+                            );
                         })}
                     </div>
 
@@ -244,6 +266,23 @@ export default async function BlogPostPage({ params }) {
                                 Buy Carbon Credits
                             </Link>
                         </div>
+                    </div>
+
+                    {/* SEO internal link block — added to bottom of every blog post */}
+                    <div className="blog-cta-section mt-12 border border-gray-100 rounded-2xl p-6 shadow-sm">
+                      <h3 className="text-xl font-bold mb-4">Related guides on BuyCarbonCredit.in</h3>
+                      <ul className="list-disc list-inside space-y-2 text-emerald-700">
+                        <li><Link href="/carbon-credit-price-per-acre" className="hover:underline">Carbon credit price per acre in India 2026</Link></li>
+                        <li><Link href="/carbon-credit-registration" className="hover:underline">How to register for carbon credits in India (free)</Link></li>
+                        <li><Link href="/how-to-sell-carbon-credits-india" className="hover:underline">How to sell carbon credits from your farm</Link></li>
+                        <li><Link href="/carbon-credit-calculator" className="hover:underline">Carbon credit income calculator — estimate your earnings</Link></li>
+                        <li><Link href="/carbon-credit-price" className="hover:underline">Current carbon credit price in India 2026</Link></li>
+                      </ul>
+                      <div className="mt-4">
+                        <Link href="/contact" className="cta-btn inline-flex items-center px-4 py-2 bg-emerald-600 text-white font-bold rounded-lg hover:bg-emerald-700">
+                          Register Your Farm Free →
+                        </Link>
+                      </div>
                     </div>
 
                 </div>

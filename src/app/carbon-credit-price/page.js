@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Carbon Credit Price in India 2026 | 1 कार्बन क्रेडिट = कितने रुपए? | Live Carbon Market",
-  description: "Current carbon credit price in India 2026. 1 carbon credit = ₹500 to ₹4,000 per metric ton. कार्बन क्रेडिट का भाव 2026। How much do carbon credits cost in India? Farmer earnings per acre.",
+  title: "Carbon Credit Price in India 2026 | ₹500–₹4000 Per Ton | BuyCarbonCredit.in",
+  description: "Carbon credit price in India 2026: ₹500–₹4,000 per metric ton. Current voluntary carbon market rates, price per acre, 1 ton price in rupees, historical trends. Updated monthly.",
   keywords: [
     "carbon credit price India 2026",
     "1 carbon credit price in rupees",
@@ -53,6 +53,15 @@ const priceSchema = {
   }
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://buycarboncredit.in/" },
+    { "@type": "ListItem", "position": 2, "name": "Carbon Credit Price", "item": "https://buycarboncredit.in/carbon-credit-price" }
+  ]
+};
+
 const PRICES = [
   { type: "General Soil Carbon (Unverified)", min: 500, max: 1200, color: "bg-gray-50 border-gray-200", badge: "Entry Level" },
   { type: "Voluntary Market (Basic Verified)", min: 1000, max: 2000, color: "bg-blue-50 border-blue-200", badge: "Standard" },
@@ -80,6 +89,10 @@ export default function CarbonCreditPrice() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(priceSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <div className="bg-white min-h-screen">
         {/* Hero */}
         <section className="bg-gradient-to-br from-amber-600 via-orange-500 to-amber-400 py-20 text-white text-center">
@@ -105,6 +118,59 @@ export default function CarbonCreditPrice() {
               Current Market Rate: ₹1,500 – ₹4,000 per Carbon Credit (2026)
             </div>
           </div>
+
+          {/* Price Table */}
+          <section className="mb-16" aria-labelledby="table-price-2026">
+            <h2 id="table-price-2026" className="text-2xl font-bold mb-2">Carbon Credit Price Table — India (April 2026)</h2>
+            <p className="text-gray-500 mb-4">Prices are indicative. Actual deals vary by verification standard, buyer demand, and farming practice.</p>
+            <div className="overflow-x-auto rounded-2xl border border-gray-100 shadow-sm">
+              <table className="w-full text-sm">
+                <thead className="bg-gray-900 text-white">
+                  <tr>
+                    <th className="px-4 py-3 text-left font-bold">Credit Type</th>
+                    <th className="px-4 py-3 text-left font-bold">Market</th>
+                    <th className="px-4 py-3 text-center font-bold">Price (₹/ton)</th>
+                    <th className="px-4 py-3 text-center font-bold">Price ($/ton)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="bg-white">
+                    <td className="px-4 py-3 font-semibold">Agricultural Soil Carbon</td>
+                    <td className="px-4 py-3">Voluntary (India)</td>
+                    <td className="px-4 py-3 text-center">₹500–₹2,500</td>
+                    <td className="px-4 py-3 text-center">$6–$30</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="px-4 py-3 font-semibold">Agroforestry Carbon</td>
+                    <td className="px-4 py-3">Voluntary (India)</td>
+                    <td className="px-4 py-3 text-center">₹1,000–₹4,000</td>
+                    <td className="px-4 py-3 text-center">$12–$48</td>
+                  </tr>
+                  <tr className="bg-white">
+                    <td className="px-4 py-3 font-semibold">VCS Verified Credits</td>
+                    <td className="px-4 py-3">Voluntary (Global)</td>
+                    <td className="px-4 py-3 text-center">₹1,500–₹6,000</td>
+                    <td className="px-4 py-3 text-center">$18–$72</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="px-4 py-3 font-semibold">Gold Standard Credits</td>
+                    <td className="px-4 py-3">Voluntary (Global)</td>
+                    <td className="px-4 py-3 text-center">₹2,000–₹8,000</td>
+                    <td className="px-4 py-3 text-center">$24–$96</td>
+                  </tr>
+                  <tr className="bg-white">
+                    <td className="px-4 py-3 font-semibold">CCTS India Credits</td>
+                    <td className="px-4 py-3">Compliance (India)</td>
+                    <td className="px-4 py-3 text-center">₹300–₹1,500</td>
+                    <td className="px-4 py-3 text-center">$3.6–$18</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-sm text-gray-500 mt-3">
+              Last Updated: April 2026. See <Link href="/carbon-credit-price-per-acre" className="text-emerald-600 font-semibold hover:underline">per acre earnings</Link>, <Link href="/carbon-credit-registration" className="text-emerald-600 font-semibold hover:underline">register your farm</Link>, <Link href="/how-to-sell-carbon-credits-india" className="text-emerald-600 font-semibold hover:underline">how to sell</Link>, and the <Link href="/carbon-credit-calculator" className="text-emerald-600 font-semibold hover:underline">carbon credit calculator</Link>.
+            </p>
+          </section>
 
           {/* Price Cards */}
           <section className="mb-16" aria-labelledby="price-categories">
