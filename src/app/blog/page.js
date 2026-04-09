@@ -1,6 +1,31 @@
 import Link from "next/link";
 import blogs from "@/data/blogs.json";
 
+export const metadata = {
+  title: "Carbon Credit India — Guides, Prices & News Blog | BuyCarbonCredit.in",
+  description: "Expert guides on carbon credit prices, how to sell carbon credits in India, farmer registration, and net-zero strategies. Read in English, Hindi, Marathi. Updated 2026.",
+  keywords: [
+    "carbon credit India blog",
+    "carbon credit guide India",
+    "how to sell carbon credits India",
+    "carbon credit price 2026",
+    "carbon credit farmers India",
+    "कार्बन क्रेडिट जानकारी",
+    "carbon credit marathi mahiti",
+    "carbon credit hindi guide",
+  ],
+  alternates: {
+    canonical: "https://buycarboncredit.in/blog",
+  },
+  openGraph: {
+    title: "Carbon Credit India — Guides & News Blog | BuyCarbonCredit.in",
+    description: "Expert carbon credit guides in English, Hindi & Marathi. Prices, registration, farming practices, and news for Indian farmers.",
+    url: "https://buycarboncredit.in/blog",
+    type: "website",
+    locale: "en_IN",
+  },
+};
+
 const blogPageSchema = {
     "@context": "https://schema.org",
     "@type": "Blog",

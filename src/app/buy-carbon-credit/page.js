@@ -54,12 +54,19 @@ export default function BuyCarbonCreditPage() {
         <div className="bg-white min-h-screen">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <header className="mb-12">
+                    <p className="text-emerald-700 font-bold text-sm uppercase tracking-widest mb-3">India's #1 Carbon Credit Marketplace</p>
                     <h1 className="text-4xl font-extrabold text-gray-900 mb-4 tracking-tight">
-                        Buy Carbon Credits from Farmers
+                        Buy Carbon Credits from Indian Farmers | कार्बन क्रेडिट खरीदें
                     </h1>
                     <p className="text-lg text-gray-600 max-w-2xl leading-relaxed">
-                        Browse available carbon credit listings from farmers around the world. Every credit listed is verified and directly supports land restoration.
+                        Buy verified <strong>carbon credits</strong> directly from Indian farmers. Meet your <strong>ESG</strong>, <strong>CSR</strong> &amp; <strong>net-zero</strong> goals with soil carbon credits from across India. No middlemen — direct farmer-to-company transactions.
                     </p>
+                    <div className="flex flex-wrap gap-3 mt-4">
+                      {["Maharashtra","Uttar Pradesh","Gujarat","Punjab","Telangana","Karnataka"].map(s => (
+                        <span key={s} className="text-xs bg-emerald-50 text-emerald-700 border border-emerald-200 px-3 py-1 rounded-full font-medium">{s}</span>
+                      ))}
+                      <span className="text-xs bg-gray-50 text-gray-500 border border-gray-200 px-3 py-1 rounded-full font-medium">+ All India</span>
+                    </div>
                 </header>
 
                 <FilterBar

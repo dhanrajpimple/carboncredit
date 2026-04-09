@@ -1,6 +1,6 @@
 export const metadata = {
-    title: "Buy Carbon Credits from Farmers India | Browse Verified Listings | कार्बन क्रेडिट खरीदें",
-    description: "Browse verified carbon credit listings from Indian farmers across Maharashtra, UP, Gujarat, Punjab, Telangana & 20+ states. Filter by state, crop type, volume. Best price carbon credits. Companies: Meet net-zero, ESG, CSR targets. कार्बन क्रेडिट खरीदें — सीधे किसान से।",
+    title: "Buy Carbon Credits India | Verified from Farmers | BuyCarbonCredit.in",
+    description: "Buy verified carbon credits directly from Indian farmers. Meet ESG, CSR & net-zero targets. Soil carbon credits from Maharashtra, UP, Gujarat, Punjab, Telangana & all India. No middlemen. कार्बन क्रेडिट खरीदें।",
     keywords: [
         // Short-tail
         "buy carbon credit India",
@@ -45,9 +45,75 @@ export const metadata = {
         description: "Browse carbon credit listings from farmers across all Indian states. Best price, verified, direct purchase. ESG & net-zero compliant.",
         url: "https://buycarboncredit.in/buy-carbon-credit",
         type: "website",
+        locale: "en_IN",
     },
 };
 
+const marketplaceListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Buy Carbon Credits from Verified Indian Farmers",
+    "description": "Verified carbon credit listings from Indian farmers across all states. Buy directly for ESG, CSR, and net-zero compliance.",
+    "url": "https://buycarboncredit.in/buy-carbon-credit",
+    "itemListOrder": "https://schema.org/ItemListOrderDescending",
+};
+
+const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://buycarboncredit.in/" },
+        { "@type": "ListItem", "position": 2, "name": "Buy Carbon Credits", "item": "https://buycarboncredit.in/buy-carbon-credit" }
+    ]
+};
+
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How to buy carbon credits in India for companies?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Companies can buy carbon credits in India directly from verified Indian farmers on BuyCarbonCredit.in. Browse listings by state, crop type, and volume. Purchase verified carbon offset certificates for ESG, CSR, and BRSR compliance. Direct farmer-to-company transactions — no middlemen."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What is the price of carbon credits in India 2026?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Carbon credit prices in India range from ₹500 to ₹4,000 per metric ton in 2026. Agricultural soil carbon credits trade at ₹800–₹2,500 per ton. Premium verified (VCS, Gold Standard) credits fetch ₹2,500–₹4,000 per ton."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Which Indian states have carbon credits available to buy?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Carbon credits are available from farmers in all Indian states on BuyCarbonCredit.in, including Maharashtra, Uttar Pradesh, Gujarat, Punjab, Haryana, Telangana, Karnataka, Tamil Nadu, Rajasthan, Madhya Pradesh, Bihar, Odisha, and more."
+            }
+        }
+    ]
+};
+
 export default function BuyLayout({ children }) {
-    return <>{children}</>;
+    return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(marketplaceListSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
+            {children}
+        </>
+    );
 }
