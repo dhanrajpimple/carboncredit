@@ -353,77 +353,6 @@ const marketplaceSchema = {
   }
 };
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is a carbon credit?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A carbon credit represents the removal or reduction of one metric ton of CO₂ from the atmosphere. Farmers earn carbon credits through sustainable agriculture practices like no-till farming, cover crops, and composting. Companies buy these credits to offset their carbon emissions and meet net-zero goals."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How can a farmer sell carbon credits in India?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Indian farmers can sell carbon credits by: 1) Registering on BuyCarbonCredit.in for free, 2) Submitting farm details including land area, location, and farming practices, 3) Getting a verification assessment, 4) Listing verified carbon credits on the marketplace, 5) Getting paid directly by buying companies. Minimum land area is 1 acre."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the carbon credit price in India in 2026?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Carbon credit prices in India range from ₹500 to ₹4000 per metric ton (1 carbon credit) depending on quality, verification standard (VCS, Gold Standard), and demand. An average Indian farmer with 5 acres can earn ₹25,000 to ₹50,000+ per year from carbon credits."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "कार्बन क्रेडिट क्या है? (What is carbon credit in Hindi?)",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "एक कार्बन क्रेडिट वातावरण से एक मीट्रिक टन CO₂ को हटाने या कम करने का प्रतिनिधित्व करता है। किसान टिकाऊ खेती जैसे बिना जुताई, कवर क्रॉप्स, और जैविक खेती से कार्बन क्रेडिट कमाते हैं। कंपनियां अपने कार्बन उत्सर्जन को ऑफसेट करने के लिए इन क्रेडिट को खरीदती हैं।"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "कार्बन क्रेडिट म्हणजे काय? (What is carbon credit in Marathi?)",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "कार्बन क्रेडिट म्हणजे वातावरणातून एक मेट्रिक टन CO₂ काढून टाकण्याचे किंवा कमी करण्याचे प्रमाणपत्र. शेतकरी शाश्वत शेती पद्धती जसे की को-टिल्लेज, सेंद्रिय शेती, आणि झाडे लावणे याद्वारे कार्बन क्रेडिट मिळवू शकतात. कंपन्या आपल्या कार्बन उत्सर्जनाची भरपाई करण्यासाठी हे क्रेडिट विकत घेतात."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Which farmers are eligible for carbon credits in India?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Any Indian farmer with minimum 1 acre of agricultural land can be eligible for carbon credits. Eligibility is based on adopting sustainable practices like no-till farming, cover crops, organic farming, agroforestry, or water conservation. Farmers from all Indian states including Maharashtra, UP, Gujarat, Punjab, Telangana, Karnataka, Tamil Nadu are eligible."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do companies buy carbon credits in India?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Companies can buy carbon credits on BuyCarbonCredit.in by: 1) Browsing verified farm listings filtered by state, crop type, and credit volume, 2) Contacting farmer sellers directly, 3) Negotiating price per ton, 4) Getting a carbon offset certificate for ESG/CSR reporting. BuyCarbonCredit.in offers direct farmer-to-company transactions with no middlemen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What crops generate the most carbon credits in India?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "In India, the crops and practices that generate the most carbon credits include: 1) Paddy (rice) with alternate wetting-drying method, 2) Wheat with no-till farming, 3) Sugarcane with crop residue management, 4) Agroforestry (trees + crops), 5) Legumes (soybean, chickpea), 6) Vegetable farming with cover crops. Sequestration rates range from 0.5 to 3 tons CO₂ per acre per year."
-      }
-    }
-  ]
-};
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
@@ -461,10 +390,6 @@ export default function RootLayout({ children }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(marketplaceSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5017050359206389"
      crossOrigin="anonymous"></script>
