@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 
 export const metadata = {
   title: "Buy & Sell Carbon Credits India | Farmer Registration | BuyCarbonCredit.in",
@@ -136,15 +136,7 @@ export default function Home() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(homePageSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeWebsiteSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({...homePageSchema, '@type': ['WebPage', 'FAQPage'], 'mainEntity': homeFaqSchema.mainEntity}) }}
       />
       <div className="flex flex-col gap-20 pb-20">
 
@@ -449,18 +441,66 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ─── Latest Blogs Section ─── */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-labelledby="latest-blogs-title">
+          <div className="flex justify-between items-end mb-12">
+            <div>
+              <h2 id="latest-blogs-title" className="text-3xl font-bold mb-4">Latest Carbon Credit Guides & News</h2>
+              <p className="text-gray-500">Expert insights on carbon credit prices, policies, and farming in India.</p>
+            </div>
+            <Link href="/blog" className="hidden md:flex text-emerald-600 font-bold hover:underline items-center gap-1">
+              View All Blogs <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg>
+            </Link>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                id: "carbon-credit-price-maharashtra-2026",
+                title: "Carbon Credit Price in Maharashtra 2026 | विदर्भातील शेतकरी कमाई",
+                cat: "Market",
+                date: "April 10, 2026",
+                desc: "Latest price update for Maharashtra farmers. Earn ₹5,000 to ₹12,000 per acre in Vidarbha, Nashik, and Pune."
+              },
+              {
+                id: "bamboo-farming-carbon-credits-india",
+                title: "Earn Carbon Credits with Bamboo Farming in India | बांस की खेती",
+                cat: "Farming",
+                date: "April 5, 2026",
+                desc: "Bamboo absorbs 4x more CO₂. Learn how Indian farmers earn ₹25,000+ per acre from bamboo carbon credits."
+              },
+              {
+                id: "carbon-credit-benefits-small-farmers-up-bihar",
+                title: "Carbon Credit Benefits for Small Farmers in UP & Bihar | यूपी बिहार किसान",
+                cat: "Regional",
+                date: "April 1, 2026",
+                desc: "New opportunities for 1-5 acre farmers in UP and Bihar to earn extra income from paddy and wheat."
+              }
+            ].map(post => (
+              <Link href={`/blog/${post.id}`} key={post.id} className="group flex flex-col bg-white rounded-3xl border border-gray-100 p-6 hover:shadow-xl transition-all h-full">
+                <span className="text-xs font-bold text-emerald-600 uppercase tracking-widest mb-3 block">{post.cat} • {post.date}</span>
+                <h3 className="text-xl font-bold text-gray-900 group-hover:text-emerald-600 transition-colors mb-4">{post.title}</h3>
+                <p className="text-gray-500 text-sm mb-6 line-clamp-3">{post.desc}</p>
+                <span className="mt-auto inline-flex items-center text-emerald-600 font-bold text-sm">
+                  Read Full Guide <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg>
+                </span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
         {/* ─── Blog CTA ─── */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gray-50 rounded-3xl p-8 md:p-12 border border-gray-100">
             <div className="flex flex-col md:flex-row items-center justify-between gap-8">
               <div>
-                <h2 className="text-2xl font-bold mb-2">Learn More: Carbon Credit Guides & News</h2>
+                <h2 className="text-2xl font-bold mb-2">Detailed Carbon Credit Knowledge Hub</h2>
                 <p className="text-gray-600">
                   Read expert blogs in English, Hindi, and Marathi. कार्बन क्रेडिट की पूरी जानकारी हिंदी में। कार्बन क्रेडिट मराठी माहिती.
                 </p>
               </div>
               <Link href="/blog" id="blog-cta-btn" className="px-8 py-4 bg-emerald-600 text-white rounded-xl font-bold hover:bg-emerald-700 transition-all whitespace-nowrap shadow-md">
-                Read All Blogs →
+                Browse Knowledge Hub →
               </Link>
             </div>
           </div>
