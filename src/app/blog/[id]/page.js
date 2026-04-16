@@ -19,10 +19,18 @@ export async function generateMetadata({ params }) {
         return { title: "Blog Not Found" };
     }
 
+    const metadataKeywords = Array.from(new Set([
+        ...(post.keywords || []),
+        "carbon credit blog",
+        "carbon credit india blog",
+        "carbon credits India",
+        `${post.category} carbon credit guide`,
+    ]));
+
     return {
         title: `${post.title} | BuyCarbonCredit.in`,
         description: post.excerpt,
-        keywords: post.keywords?.join(", "),
+        keywords: metadataKeywords,
         alternates: {
             canonical: `https://buycarboncredit.in/blog/${post.id}`,
         },
@@ -39,6 +47,7 @@ export async function generateMetadata({ params }) {
             title: post.title,
             description: post.excerpt,
         },
+        category: post.category,
     };
 }
 
@@ -67,7 +76,7 @@ export default async function BlogPostPage({ params }) {
 
     const jsonLd = {
         "@context": "https://schema.org",
-        "@type": "Article",
+        "@type": "BlogPosting",
         "headline": post.title,
         "description": post.excerpt,
         "author": {
@@ -88,6 +97,11 @@ export default async function BlogPostPage({ params }) {
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": `https://buycarboncredit.in/blog/${post.id}`
+        },
+        "isPartOf": {
+            "@type": "Blog",
+            "@id": "https://buycarboncredit.in/blog/#blog",
+            "name": "BuyCarbonCredit Blog"
         },
         "keywords": post.keywords?.join(", "),
         "inLanguage": post.lang,
@@ -158,7 +172,7 @@ export default async function BlogPostPage({ params }) {
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
                 />
             )}
-            <article className="bg-white min-h-screen py-16" itemScope itemType="https://schema.org/Article">
+            <article className="bg-white min-h-screen py-16" itemScope itemType="https://schema.org/BlogPosting">
                 <meta itemProp="datePublished" content={post.date} />
                 <meta itemProp="inLanguage" content={post.lang} />
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -201,6 +215,7 @@ export default async function BlogPostPage({ params }) {
                                     <span itemProp="name">BuyCarbonCredit Team</span>
                                 </p>
                                 <p className="text-sm text-gray-500">Marketplace Experts</p>
+                                <p className="text-sm text-gray-500">Part of the BuyCarbonCredit carbon credit blog for India</p>
                             </div>
                         </div>
                     </div>
@@ -270,7 +285,7 @@ export default async function BlogPostPage({ params }) {
 
                     {/* SEO internal link block — added to bottom of every blog post */}
                     <div className="blog-cta-section mt-12 border border-gray-100 rounded-2xl p-6 shadow-sm">
-                      <h3 className="text-xl font-bold mb-4">Related guides on BuyCarbonCredit.in</h3>
+                      <h3 className="text-xl font-bold mb-4">Read more from the BuyCarbonCredit blog</h3>
                       <ul className="list-disc list-inside space-y-2 text-emerald-700">
                         <li><Link href="/carbon-credit-price-per-acre" className="hover:underline">Carbon credit price per acre in India 2026</Link></li>
                         <li><Link href="/carbon-credit-registration" className="hover:underline">How to register for carbon credits in India (free)</Link></li>

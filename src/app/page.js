@@ -1,14 +1,21 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Buy & Sell Carbon Credits India | Farmer Registration | BuyCarbonCredit.in",
+  title: "Buy & Sell Carbon Credits India | Marketplace, Price & Blog | BuyCarbonCredit.in",
   description: "India's #1 carbon credit marketplace. Farmers earn ₹50,000+/year. Companies meet ESG & net-zero goals. Carbon credit price ₹500–₹4000/ton. Register free — all Indian states.",
   keywords: [
     "buy carbon credits india",
+    "carbon credits india",
     "carbon credit price india",
+    "carbon credit price per acre india",
     "carbon credit registration farmers",
     "sell carbon credits india",
     "carbon credit marketplace india",
+    "carbon credit calculator india",
+    "carbon credit blog india",
+    "carbon credits blog",
+    "carbon credit guide india",
+    "how to sell carbon credits india",
   ],
   alternates: {
     canonical: "https://buycarboncredit.in/",
@@ -105,18 +112,6 @@ const homeFaqSchema = {
   ]
 };
 
-const homeWebsiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "BuyCarbonCredit.in",
-  "url": "https://buycarboncredit.in/",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://buycarboncredit.in/blog?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
-};
-
 const KEY_STATS = [
   { value: "₹50,000+", label: "Avg. Farmer Annual Income", sub: "per year from carbon credits" },
   { value: "₹500–₹4000", label: "Carbon Credit Price", sub: "per metric ton (1 carbon credit)" },
@@ -136,7 +131,11 @@ export default function Home() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({...homePageSchema, '@type': ['WebPage', 'FAQPage'], 'mainEntity': homeFaqSchema.mainEntity}) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homePageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqSchema) }}
       />
       <div className="flex flex-col gap-20 pb-20">
 
@@ -445,11 +444,11 @@ export default function Home() {
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-labelledby="latest-blogs-title">
           <div className="flex justify-between items-end mb-12">
             <div>
-              <h2 id="latest-blogs-title" className="text-3xl font-bold mb-4">Latest Carbon Credit Guides & News</h2>
-              <p className="text-gray-500">Expert insights on carbon credit prices, policies, and farming in India.</p>
+              <h2 id="latest-blogs-title" className="text-3xl font-bold mb-4">Latest Carbon Credit Blog Guides & News</h2>
+              <p className="text-gray-500">Fresh insights from our carbon credit blog on prices, policies, farmer income, carbon farming, and verified market updates in India.</p>
             </div>
             <Link href="/blog" className="hidden md:flex text-emerald-600 font-bold hover:underline items-center gap-1">
-              View All Blogs <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg>
+              Explore Carbon Credit Blog <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg>
             </Link>
           </div>
           
@@ -487,6 +486,9 @@ export default function Home() {
               </Link>
             ))}
           </div>
+          <p className="text-sm text-gray-500 mt-8">
+            Explore the full <Link href="/blog" className="text-emerald-600 font-semibold hover:underline">carbon credit blog for India</Link> to learn about carbon credit prices, carbon credit registration, carbon credit farming, carbon credit scams, and how companies can buy verified carbon credits from Indian farmers.
+          </p>
         </section>
 
         {/* ─── Blog CTA ─── */}

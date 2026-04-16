@@ -5,11 +5,20 @@ export const metadata = {
   title: "Carbon Credit India — Guides, Prices & News Blog | BuyCarbonCredit.in",
   description: "Expert guides on carbon credit prices, how to sell carbon credits in India, farmer registration, and net-zero strategies. Read in English, Hindi, Marathi. Updated 2026.",
   keywords: [
+    "carbon credit blog India",
+    "carbon credits blog India",
+    "carbon credit articles India",
+    "carbon credit news India",
+    "carbon credit blog",
     "carbon credit India blog",
     "carbon credit guide India",
     "how to sell carbon credits India",
     "carbon credit price 2026",
     "carbon credit farmers India",
+    "carbon farming blog India",
+    "carbon credit price blog India",
+    "carbon credit Hindi blog",
+    "carbon credit Marathi blog",
     "कार्बन क्रेडिट जानकारी",
     "carbon credit marathi mahiti",
     "carbon credit hindi guide",
@@ -52,6 +61,39 @@ const blogPageSchema = {
     }))
 };
 
+const blogBreadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://buycarboncredit.in"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://buycarboncredit.in/blog"
+        }
+    ]
+};
+
+const blogItemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Carbon Credit Blog Articles",
+    "itemListOrder": "https://schema.org/ItemListOrderDescending",
+    "numberOfItems": blogs.length,
+    "itemListElement": blogs.map((post, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "url": `https://buycarboncredit.in/blog/${post.id}`,
+        "name": post.title
+    }))
+};
+
 const CATEGORY_COLORS = {
     "Guide": "bg-emerald-50 text-emerald-700 border-emerald-200",
     "Education": "bg-blue-50 text-blue-700 border-blue-200",
@@ -66,6 +108,8 @@ const CATEGORY_COLORS = {
 
 const ALL_KEYWORD_TAGS = [
     // English
+    "carbon credit blog India", "carbon credits India blog", "carbon credit news blog",
+    "carbon credit articles India", "carbon farming blog India", "carbon credit price blog",
     "carbon credit", "buy carbon credit", "sell carbon credit", "carbon credit price India",
     "carbon credit marketplace India", "carbon credit farmers", "carbon offset India",
     "net zero India", "ESG carbon credits", "regenerative agriculture India",
@@ -94,6 +138,14 @@ export default function BlogPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPageSchema) }}
             />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(blogBreadcrumbSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(blogItemListSchema) }}
+            />
             <div className="bg-white min-h-screen py-16">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -106,12 +158,26 @@ export default function BlogPage() {
                             Carbon Credit Guides & <span className="text-emerald-600">News Blog</span>
                         </h1>
                         <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed mb-3">
-                            Expert insights on <strong>carbon farming</strong>, <strong>carbon credit prices</strong>, <strong>government policy</strong>, and <strong>sustainable agriculture</strong> in India.
+                            India&apos;s carbon credit blog with expert insights on <strong>carbon farming</strong>, <strong>carbon credit prices</strong>, <strong>government policy</strong>, and <strong>sustainable agriculture</strong> in India.
                         </p>
                         <p className="text-base text-gray-500 max-w-2xl mx-auto">
                             हिंदी में कार्बन क्रेडिट की पूरी जानकारी। मराठीत कार्बन क्रेडिट माहिती। Guides in English, हिंदी, मराठी, ગુજરાતી, తెలుగు, தமிழ், ಕನ್ನಡ, ਪੰਜਾਬੀ.
                         </p>
                     </header>
+
+                    <section className="mb-12 bg-emerald-50 rounded-3xl p-8 border border-emerald-100" aria-labelledby="blog-topics">
+                        <h2 id="blog-topics" className="text-2xl font-bold mb-3">Popular Topics in Our Carbon Credit Blog</h2>
+                        <p className="text-gray-600 mb-6 max-w-4xl">
+                            This carbon credit blog covers short-tail and long-tail search topics such as carbon credit price in India, carbon credit registration for farmers, how to sell carbon credits, how companies buy carbon credits, carbon credit scams, carbon farming income, and regional guides for Maharashtra, UP, Bihar, Gujarat, Punjab, Telangana, Karnataka, and Tamil Nadu.
+                        </p>
+                        <div className="flex flex-wrap gap-3">
+                            <Link href="/carbon-credit-price" className="px-4 py-2 rounded-full bg-white border border-emerald-200 text-emerald-700 font-semibold hover:bg-emerald-100 transition-colors">Carbon Credit Price Guide</Link>
+                            <Link href="/how-to-sell-carbon-credits-india" className="px-4 py-2 rounded-full bg-white border border-emerald-200 text-emerald-700 font-semibold hover:bg-emerald-100 transition-colors">How to Sell Carbon Credits</Link>
+                            <Link href="/carbon-credit-registration" className="px-4 py-2 rounded-full bg-white border border-emerald-200 text-emerald-700 font-semibold hover:bg-emerald-100 transition-colors">Farmer Registration Guide</Link>
+                            <Link href="/buy-carbon-credit" className="px-4 py-2 rounded-full bg-white border border-emerald-200 text-emerald-700 font-semibold hover:bg-emerald-100 transition-colors">Buy Carbon Credits</Link>
+                            <Link href="/carbon-credit-calculator" className="px-4 py-2 rounded-full bg-white border border-emerald-200 text-emerald-700 font-semibold hover:bg-emerald-100 transition-colors">Carbon Credit Calculator</Link>
+                        </div>
+                    </section>
 
                     {/* Category Tags */}
                     <div className="flex flex-wrap gap-3 justify-center mb-12" aria-label="Blog Categories">

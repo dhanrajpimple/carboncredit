@@ -18,21 +18,28 @@ export const metadata = {
     "VCS carbon price India",
     "soil carbon credit price",
     "carbon market India 2026",
+    "carbon credit price blog India",
+    "carbon credit price update India",
+    "carbon market news India",
+    "carbon credit rates for farmers India",
   ],
   alternates: {
     canonical: "https://buycarboncredit.in/carbon-credit-price",
   },
 };
 
-const priceSchema = {
+const pricePageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "Carbon Credit Price in India 2026",
   "description": "Live carbon credit prices in India. 1 carbon credit = ₹500 to ₹4,000 per metric ton.",
-  "url": "https://buycarboncredit.in/carbon-credit-price",
-  "mainEntity": {
-    "@type": "FAQPage",
-    "mainEntity": [
+  "url": "https://buycarboncredit.in/carbon-credit-price"
+};
+
+const priceFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
       {
         "@type": "Question",
         "name": "What is the carbon credit price in India in 2026?",
@@ -49,8 +56,7 @@ const priceSchema = {
           "text": "2026 में भारत में 1 कार्बन क्रेडिट (1 मेट्रिक टन CO₂) की कीमत ₹500 से ₹4,000 तक होती है। गोल्ड स्टैंडर्ड और VCS प्रमाणित क्रेडिट सबसे महंगे होते हैं।"
         }
       }
-    ]
-  }
+  ]
 };
 
 const breadcrumbSchema = {
@@ -87,7 +93,11 @@ export default function CarbonCreditPrice() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(priceSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pricePageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(priceFaqSchema) }}
       />
       <script
         type="application/ld+json"
@@ -264,6 +274,27 @@ export default function CarbonCreditPrice() {
                   <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
                 </div>
               ))}
+            </div>
+          </section>
+
+          <section className="mb-16" aria-labelledby="price-blog-guides">
+            <h2 id="price-blog-guides" className="text-2xl font-bold mb-2">Carbon Credit Price Blog Guides for India</h2>
+            <p className="text-gray-500 mb-6">
+              Read detailed carbon credit blog guides for regional price trends, buyer demand, farmer income, and safe participation in the Indian carbon market.
+            </p>
+            <div className="grid md:grid-cols-3 gap-4">
+              <Link href="/blog/carbon-credit-price-maharashtra-2026" className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
+                <h3 className="font-bold text-gray-900 mb-2">Carbon Credit Price in Maharashtra 2026 Blog</h3>
+                <p className="text-sm text-gray-600">District-wise rates, income estimates, and price signals for Maharashtra farmers.</p>
+              </Link>
+              <Link href="/blog/top-10-carbon-credit-companies-india-2026" className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
+                <h3 className="font-bold text-gray-900 mb-2">Companies Buying Carbon Credits in India</h3>
+                <p className="text-sm text-gray-600">See which buyers influence carbon credit price demand across India.</p>
+              </Link>
+              <Link href="/blog/carbon-credit-scam-india" className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
+                <h3 className="font-bold text-gray-900 mb-2">Carbon Credit Scam Warning Blog</h3>
+                <p className="text-sm text-gray-600">Learn how to compare real market prices and avoid fake promises or inflated carbon credit schemes.</p>
+              </Link>
             </div>
           </section>
 
