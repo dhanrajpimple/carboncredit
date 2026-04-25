@@ -1,10 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import Link from "next/link";
 
 const FarmerCard = ({ farmer }) => {
-    const [showContact, setShowContact] = useState(false);
-
     return (
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
             <div className="flex justify-between items-start mb-4">
@@ -33,37 +31,19 @@ const FarmerCard = ({ farmer }) => {
                 </div>
             </div>
 
-            {!showContact ? (
-                <button
-                    onClick={() => setShowContact(true)}
-                    className="w-full bg-emerald-600 text-white py-3 rounded-xl font-semibold hover:bg-emerald-700 transition-colors"
-                >
-                    Contact Farmer
-                </button>
-            ) : (
-                <div className="grid grid-cols-1 gap-2 animate-fadeIn">
-                    <a
-                        href={`https://wa.me/${farmer.phone.replace(/\+/g, "")}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center bg-green-500 text-white py-2 rounded-lg font-medium hover:bg-green-600 transition-colors"
-                    >
-                        WhatsApp
-                    </a>
-                    <a
-                        href={`mailto:${farmer.email}`}
-                        className="flex items-center justify-center bg-gray-800 text-white py-2 rounded-lg font-medium hover:bg-gray-900 transition-colors"
-                    >
-                        Email
-                    </a>
-                    <a
-                        href={`tel:${farmer.phone}`}
-                        className="flex items-center justify-center border border-emerald-600 text-emerald-600 py-2 rounded-lg font-medium hover:bg-emerald-50 transition-colors"
-                    >
-                        Call: {farmer.phone}
-                    </a>
-                </div>
-            )}
+            <div className="rounded-2xl bg-gray-50 border border-gray-100 p-4 mb-6">
+                <p className="text-sm font-semibold text-gray-500 mb-1">Seller page focus</p>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                    Open the separate seller page to clearly see where this seller is located and then contact them from there.
+                </p>
+            </div>
+
+            <Link
+                href={farmer.listing_path || `/buy-carbon-credit/${farmer.id}`}
+                className="w-full inline-flex items-center justify-center bg-emerald-600 text-white py-3 rounded-xl font-semibold hover:bg-emerald-700 transition-colors"
+            >
+                View Seller Page
+            </Link>
         </div>
     );
 };
