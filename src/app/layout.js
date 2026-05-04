@@ -6,9 +6,11 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
+  metadataBase: new URL("https://buycarboncredit.in"),
+  applicationName: "BuyCarbonCredit",
   title: {
     default: "BuyCarbonCredit | India's #1 Carbon Credit Marketplace for Farmers & Companies",
-    template: "%s | BuyCarbonCredit.in"
+    template: "%s | BuyCarbonCredit"
   },
   description: "BuyCarbonCredit.in — India's best carbon credit marketplace. Buy and sell verified carbon credits directly from farmers. Earn money from sustainable farming.",
   keywords: [
@@ -94,8 +96,8 @@ export const metadata = {
     "best app to sell carbon credits India"
   ],
   authors: [{ name: "BuyCarbonCredit Team" }],
-  creator: "BuyCarbonCredit.in",
-  publisher: "BuyCarbonCredit.in",
+  creator: "BuyCarbonCredit",
+  publisher: "BuyCarbonCredit",
   category: "Carbon Credit Marketplace",
   classification: "Environmental, Agriculture, Climate Technology",
   openGraph: {
@@ -152,6 +154,7 @@ export const metadata = {
     icon: "/favicon.png",
     apple: "/favicon.png",
   },
+  manifest: "/site.webmanifest",
 };
 
 const organizationSchema = {
@@ -203,6 +206,11 @@ const websiteSchema = {
   "@id": "https://buycarboncredit.in/#website",
   "url": "https://buycarboncredit.in",
   "name": "BuyCarbonCredit",
+  "alternateName": [
+    "Buy Carbon Credit",
+    "BuyCarbonCredit India",
+    "BuyCarbonCredit.in"
+  ],
   "description": "India's best carbon credit marketplace for farmers and companies",
   "publisher": { "@id": "https://buycarboncredit.in/#org" },
   "potentialAction": {
@@ -253,6 +261,9 @@ export default function RootLayout({ children }) {
         <link rel="alternate" hrefLang="kn-IN" href="https://buycarboncredit.in" />
         <link rel="alternate" hrefLang="pa-IN" href="https://buycarboncredit.in" />
         <link rel="alternate" hrefLang="x-default" href="https://buycarboncredit.in" />
+        <meta name="application-name" content="BuyCarbonCredit" />
+        <meta name="apple-mobile-web-app-title" content="BuyCarbonCredit" />
+        <meta property="og:site_name" content="BuyCarbonCredit" />
         <meta name="geo.region" content="IN" />
         <meta name="geo.country" content="India" />
         <meta name="language" content="English, Hindi, Marathi, Gujarati, Telugu, Tamil, Kannada, Punjabi" />
