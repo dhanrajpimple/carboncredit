@@ -15,7 +15,7 @@ export default function ContactUsPage() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-extrabold text-gray-900 mb-4 text-center">Contact Us</h1>
         <p className="text-lg text-gray-600 text-center mb-12">
-          Have questions about buying or selling carbon credits? We're here to help. Reach out to the BuyCarbonCredit.in team.
+          Have questions about buying or selling carbon credits? We&apos;re here to help. Reach out to the BuyCarbonCredit.in team.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">

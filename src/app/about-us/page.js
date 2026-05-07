@@ -11,7 +11,7 @@ export default function AboutUsPage() {
         
         <div className="prose prose-lg text-gray-700 max-w-none space-y-6">
           <p>
-            Welcome to <strong>BuyCarbonCredit.in</strong>, India's premier online marketplace dedicated to the seamless trading of voluntary carbon credits. We act as the crucial bridge connecting Indian farmers who practice sustainable agriculture with forward-thinking companies looking to offset their carbon footprint and meet ESG/CSR goals.
+            Welcome to <strong>BuyCarbonCredit.in</strong>, India&apos;s premier online marketplace dedicated to the seamless trading of voluntary carbon credits. We act as the crucial bridge connecting Indian farmers who practice sustainable agriculture with forward-thinking companies looking to offset their carbon footprint and meet ESG/CSR goals.
           </p>
 
           <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Our Mission</h2>
@@ -35,13 +35,13 @@ export default function AboutUsPage() {
 
           <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Our Vision</h2>
           <p>
-            We envision an India where every farmer is empowered to adopt regenerative agriculture, and where companies taking responsibility for their emissions can transparently invest in our nation's agrarian roots.
+            We envision an India where every farmer is empowered to adopt regenerative agriculture, and where companies taking responsibility for their emissions can transparently invest in our nation&apos;s agrarian roots.
           </p>
 
           <div className="mt-10 p-6 bg-emerald-50 rounded-2xl border border-emerald-100">
             <h3 className="text-xl font-bold text-emerald-900 mb-2">Join the Movement</h3>
             <p className="text-emerald-800">
-              Whether you are a farmer looking to monetize your sustainable practices or a corporation aiming for Net Zero, BuyCarbonCredit.in is your trusted partner. Together, let's build a sustainable future.
+              Whether you are a farmer looking to monetize your sustainable practices or a corporation aiming for Net Zero, BuyCarbonCredit.in is your trusted partner. Together, let&apos;s build a sustainable future.
             </p>
           </div>
         </div>

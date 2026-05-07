@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 Sitemap: https://buycarboncredit.in/sitemap.xml
+Sitemap: https://buycarboncredit.in/rss.xml

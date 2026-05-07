@@ -13,7 +13,7 @@ export default function PrivacyPolicyPage() {
           <p><strong>Last Updated: [Current Date]</strong></p>
 
           <p>
-            At BuyCarbonCredit.in ("us", "we", or "our"), accessible from https://buycarboncredit.in, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by BuyCarbonCredit.in and how we use it.
+            At BuyCarbonCredit.in (&quot;us&quot;, &quot;we&quot;, or &quot;our&quot;), accessible from https://buycarboncredit.in, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by BuyCarbonCredit.in and how we use it.
           </p>
 
           <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Information We Collect</h2>
@@ -41,7 +41,7 @@ export default function PrivacyPolicyPage() {
           <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Log Files & Cookies</h2>
           <p>
             BuyCarbonCredit.in follows a standard procedure of using log files. These files log visitors when they visit websites. The information collected includes internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks.
-            We use "cookies" to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited.
+            We use &quot;cookies&quot; to store information including visitors&apos; preferences, and the pages on the website that the visitor accessed or visited.
           </p>
 
           <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Google DoubleClick DART Cookie</h2>
@@ -49,7 +49,7 @@ export default function PrivacyPolicyPage() {
             Google is one of a third-party vendor on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to our site and other sites on the internet. However, visitors may choose to decline the use of DART cookies by visiting the Google ad and content network Privacy Policy.
           </p>
 
-          <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Children's Information</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Children&apos;s Information</h2>
           <p>
             Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity. BuyCarbonCredit.in does not knowingly collect any Personal Identifiable Information from children under the age of 13.
           </p>

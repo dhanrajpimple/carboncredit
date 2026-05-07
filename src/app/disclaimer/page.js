@@ -14,7 +14,7 @@ export default function DisclaimerPage() {
 
           <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">1. General Information</h2>
           <p>
-            The information provided by <strong>BuyCarbonCredit.in</strong> ("we," "us," or "our") on https://buycarboncredit.in (the "Site") is for general informational purposes only. All information on the Site is provided in good faith, however, we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information on the Site.
+            The information provided by <strong>BuyCarbonCredit.in</strong> (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) on https://buycarboncredit.in (the &quot;Site&quot;) is for general informational purposes only. All information on the Site is provided in good faith, however, we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information on the Site.
           </p>
 
           <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">2. Professional Advice Disclaimer</h2>
@@ -38,7 +38,7 @@ export default function DisclaimerPage() {
           <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">5. Affiliates and Advertising</h2>
           <p>
             The Site may contain links to affiliate websites, and we receive an affiliate commission for any purchases made by you on the affiliate website using such links. 
-            We may use advertising networks like Google AdSense to monetize the website. These third-party vendors use cookies to serve ads based on a user's prior visits to our website.
+            We may use advertising networks like Google AdSense to monetize the website. These third-party vendors use cookies to serve ads based on a user&apos;s prior visits to our website.
           </p>
 
           <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Contact Us</h2>
