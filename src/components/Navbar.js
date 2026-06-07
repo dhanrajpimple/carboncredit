@@ -26,7 +26,7 @@ const Navbar = () => {
         <div className="flex justify-between h-16 items-center">
           <div className="flex-shrink-0">
             <Link href="/" className="text-xl font-bold text-emerald-600 tracking-tight" onClick={close}>
-              BuyCarbonCredit
+              Buy Carbon Credit
             </Link>
           </div>
 

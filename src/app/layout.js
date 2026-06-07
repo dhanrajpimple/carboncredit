@@ -7,10 +7,10 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   metadataBase: new URL("https://buycarboncredit.in"),
-  applicationName: "BuyCarbonCredit",
+  applicationName: "Buy Carbon Credit",
   title: {
-    default: "BuyCarbonCredit | India's #1 Carbon Credit Marketplace for Farmers & Companies",
-    template: "%s | BuyCarbonCredit"
+    default: "Buy Carbon Credit | India's #1 Carbon Credit Marketplace for Farmers & Companies",
+    template: "%s | Buy Carbon Credit"
   },
   description: "BuyCarbonCredit.in — India's best carbon credit marketplace. Buy and sell verified carbon credits directly from farmers. Earn money from sustainable farming.",
   keywords: [
@@ -95,16 +95,16 @@ export const metadata = {
     "how to register for carbon credit in India",
     "best app to sell carbon credits India"
   ],
-  authors: [{ name: "BuyCarbonCredit Team" }],
-  creator: "BuyCarbonCredit",
-  publisher: "BuyCarbonCredit",
+  authors: [{ name: "Buy Carbon Credit Team" }],
+  creator: "Buy Carbon Credit",
+  publisher: "Buy Carbon Credit",
   category: "Carbon Credit Marketplace",
   classification: "Environmental, Agriculture, Climate Technology",
   openGraph: {
-    title: "BuyCarbonCredit — India's #1 Carbon Credit Marketplace | कार्बन क्रेडिट मार्केटप्लेस",
+    title: "Buy Carbon Credit — India's #1 Carbon Credit Marketplace | कार्बन क्रेडिट मार्केटप्लेस",
     description: "India's best platform to buy and sell verified carbon credits directly from farmers. कार्बन क्रेडिट मार्केटप्लेस भारत। शेतकऱ्यांसाठी कार्बन क्रेडिट योजना. ₹50,000+ per year for eligible farmers.",
     url: "https://buycarboncredit.in",
-    siteName: "BuyCarbonCredit",
+    siteName: "Buy Carbon Credit",
     locale: "en_IN",
     type: "website",
     images: [
@@ -112,13 +112,13 @@ export const metadata = {
         url: "https://buycarboncredit.in/favicon.png",
         width: 1200,
         height: 630,
-        alt: "BuyCarbonCredit — India Carbon Credit Marketplace",
+        alt: "Buy Carbon Credit — India Carbon Credit Marketplace",
       }
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "BuyCarbonCredit — India's #1 Carbon Credit Marketplace",
+    title: "Buy Carbon Credit — India's #1 Carbon Credit Marketplace",
     description: "Buy and sell verified carbon credits from Indian farmers. कार्बन क्रेडिट बेचें और खरीदें। कार्बन क्रेडिट विक्री व खरेदी.",
     images: ["https://buycarboncredit.in/favicon.png"],
   },
@@ -161,8 +161,8 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "@id": "https://buycarboncredit.in/#org",
-  "name": "BuyCarbonCredit",
-  "alternateName": ["BuyCarbonCredit.in", "Buy Carbon Credit India", "कार्बन क्रेडिट मार्केटप्लेस"],
+  "name": "Buy Carbon Credit",
+  "alternateName": ["BuyCarbonCredit", "BuyCarbonCredit.in", "Buy Carbon Credit India", "कार्बन क्रेडिट मार्केटप्लेस"],
   "url": "https://buycarboncredit.in",
   "logo": {
     "@type": "ImageObject",
@@ -205,9 +205,9 @@ const websiteSchema = {
   "@type": "WebSite",
   "@id": "https://buycarboncredit.in/#website",
   "url": "https://buycarboncredit.in",
-  "name": "BuyCarbonCredit",
+  "name": "Buy Carbon Credit",
   "alternateName": [
-    "Buy Carbon Credit",
+    "BuyCarbonCredit",
     "BuyCarbonCredit India",
     "BuyCarbonCredit.in"
   ],
@@ -261,11 +261,11 @@ export default function RootLayout({ children }) {
         <link rel="alternate" hrefLang="kn-IN" href="https://buycarboncredit.in" />
         <link rel="alternate" hrefLang="pa-IN" href="https://buycarboncredit.in" />
         <link rel="alternate" hrefLang="x-default" href="https://buycarboncredit.in" />
-        <link rel="alternate" type="application/rss+xml" title="BuyCarbonCredit India Blog RSS" href="https://buycarboncredit.in/rss.xml" />
-        <meta name="application-name" content="BuyCarbonCredit" />
+        <link rel="alternate" type="application/rss+xml" title="Buy Carbon Credit India Blog RSS" href="https://buycarboncredit.in/rss.xml" />
+        <meta name="application-name" content="Buy Carbon Credit" />
         <meta name="google-adsense-account" content="ca-pub-5017050359206389" />
-        <meta name="apple-mobile-web-app-title" content="BuyCarbonCredit" />
-        <meta property="og:site_name" content="BuyCarbonCredit" />
+        <meta name="apple-mobile-web-app-title" content="Buy Carbon Credit" />
+        <meta property="og:site_name" content="Buy Carbon Credit" />
         <meta name="geo.region" content="IN" />
         <meta name="geo.country" content="India" />
         <meta name="language" content="English, Hindi, Marathi, Gujarati, Telugu, Tamil, Kannada, Punjabi" />

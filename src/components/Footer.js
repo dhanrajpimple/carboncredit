@@ -60,7 +60,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-sm">
-            © 2026 BuyCarbonCredit.in — India&apos;s #1 Carbon Credit Marketplace
+            © 2026 Buy Carbon Credit — India&apos;s #1 Carbon Credit Marketplace
           </p>
           <div className="flex gap-4 flex-wrap">
             <Link href="/privacy-policy" className="text-gray-500 hover:text-emerald-400 text-xs transition-colors">Privacy Policy</Link>

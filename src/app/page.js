@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Buy & Sell Carbon Credits India | Marketplace, Price & Blog | BuyCarbonCredit",
+  title: "Buy & Sell Carbon Credits India | Marketplace, Price & Blog | Buy Carbon Credit",
   description: "India's #1 carbon credit marketplace. Farmers earn ₹50,000+/year. Companies meet ESG & net-zero goals. Carbon credit price ₹500–₹4000/ton. Register free — all Indian states.",
   keywords: [
     "buy carbon credits india",
@@ -21,7 +21,7 @@ export const metadata = {
     canonical: "https://buycarboncredit.in/",
   },
   openGraph: {
-    title: "Buy & Sell Carbon Credits India | BuyCarbonCredit",
+    title: "Buy & Sell Carbon Credits India | Buy Carbon Credit",
     description: "India's #1 carbon credit marketplace connecting farmers with companies. Earn ₹50,000+ per year from sustainable farming.",
     url: "https://buycarboncredit.in/",
     type: "website",
@@ -34,7 +34,7 @@ const homePageSchema = {
   "@type": "WebPage",
   "@id": "https://buycarboncredit.in/#webpage",
   "url": "https://buycarboncredit.in",
-  "name": "BuyCarbonCredit — India's #1 Carbon Credit Marketplace",
+  "name": "Buy Carbon Credit — India's #1 Carbon Credit Marketplace",
   "description": "India's best carbon credit marketplace connecting farmers with companies. Buy and sell verified soil carbon credits directly.",
   "isPartOf": { "@id": "https://buycarboncredit.in/#website" },
   "about": {
