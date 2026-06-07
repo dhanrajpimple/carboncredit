@@ -263,6 +263,7 @@ export default function RootLayout({ children }) {
         <link rel="alternate" hrefLang="x-default" href="https://buycarboncredit.in" />
         <link rel="alternate" type="application/rss+xml" title="BuyCarbonCredit India Blog RSS" href="https://buycarboncredit.in/rss.xml" />
         <meta name="application-name" content="BuyCarbonCredit" />
+        <meta name="google-adsense-account" content="ca-pub-5017050359206389" />
         <meta name="apple-mobile-web-app-title" content="BuyCarbonCredit" />
         <meta property="og:site_name" content="BuyCarbonCredit" />
         <meta name="geo.region" content="IN" />
