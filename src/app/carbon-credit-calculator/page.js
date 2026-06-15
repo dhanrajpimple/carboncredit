@@ -52,7 +52,7 @@ export default function CarbonCreditCalculator() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-emerald-700 via-emerald-600 to-teal-500 py-20 text-white text-center">
         <div className="max-w-4xl mx-auto px-4">
-          <p className="text-emerald-200 font-bold text-sm uppercase tracking-widest mb-4">Free Tool — India&apos;s Best</p>
+          <p className="text-emerald-200 font-bold text-sm uppercase tracking-widest mb-4">Free Tool — India&apos;s Best — Last Updated: June 2026</p>
           <h1 className="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">
             Carbon Credit Calculator for Indian Farmers
           </h1>

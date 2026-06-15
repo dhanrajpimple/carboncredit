@@ -83,7 +83,7 @@ export default function SellCarbonCreditsPage() {
         {/* Hero */}
         <section className="bg-gradient-to-br from-emerald-700 via-emerald-600 to-emerald-500 text-white py-16 md:py-20">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-emerald-100 font-semibold text-sm uppercase tracking-wide mb-3">Sell guide • Farmer-first</p>
+            <p className="text-emerald-100 font-semibold text-sm uppercase tracking-wide mb-3">Sell guide • Farmer-first • Last Updated: June 2026</p>
             <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
               How to Sell Carbon Credits in India | कार्बन क्रेडिट कैसे बेचें
             </h1>

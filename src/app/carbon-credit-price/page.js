@@ -107,7 +107,7 @@ export default function CarbonCreditPrice() {
         {/* Hero */}
         <section className="bg-gradient-to-br from-amber-600 via-orange-500 to-amber-400 py-20 text-white text-center">
           <div className="max-w-4xl mx-auto px-4">
-            <p className="text-amber-200 font-bold text-sm uppercase tracking-widest mb-4">Live India Carbon Market — Updated 2026</p>
+            <p className="text-amber-200 font-bold text-sm uppercase tracking-widest mb-4">Live India Carbon Market — Last Updated: June 2026</p>
             <h1 className="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">
               Carbon Credit Price in India 2026
             </h1>

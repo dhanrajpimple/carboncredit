@@ -1,0 +1,19 @@
+
+> buycarboncredit@0.1.0 dev
+> next dev --hostname 0.0.0.0 --port 3000
+
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://0.0.0.0:3000
+- Environments: .env.local
+
+✓ Starting...
+✓ Ready in 1644ms
+ GET / 200 in 2.8s (compile: 1512ms, render: 1287ms)
+ GET /seller-listings 200 in 111ms (compile: 52ms, render: 59ms)
+ GET /api/farmers/filters 200 in 1792ms (compile: 233ms, render: 1559ms)
+ GET /api/farmers?page=1 200 in 1788ms (compile: 290ms, render: 1498ms)
+ GET /api/farmers/filters 200 in 244ms (compile: 8ms, render: 236ms)
+ GET /api/farmers?page=1 200 in 307ms (compile: 19ms, render: 288ms)
+ GET /contact 200 in 102ms (compile: 55ms, render: 48ms)
+ GET /terms 200 in 100ms (compile: 40ms, render: 60ms)
