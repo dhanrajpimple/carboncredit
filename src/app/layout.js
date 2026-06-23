@@ -280,6 +280,11 @@ export default function RootLayout({ children }) {
         <meta property="og:locale:alternate" content="te_IN" />
         <meta property="og:locale:alternate" content="ta_IN" />
         <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5017050359206389"
+          crossOrigin="anonymous"
+        />
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
