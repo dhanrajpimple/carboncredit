@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Advertising from "@/components/Advertising";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -284,6 +285,8 @@ export default function RootLayout({ children }) {
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5017050359206389"
           crossOrigin="anonymous"
         />
+        <script src="https://pl31068561.profitableratecpmnetwork.com/11/f4/a3/11f4a367d1eab4f18fc348ab61f88900.js" />
+        <script src="https://pl31068562.profitableratecpmnetwork.com/59/01/60/5901607653092fb8ce0b499178a75faa.js" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
@@ -302,6 +305,7 @@ export default function RootLayout({ children }) {
         <main className="min-h-screen">
           {children}
         </main>
+        <Advertising />
         <Footer />
       </body>
     </html>
