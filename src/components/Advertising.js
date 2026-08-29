@@ -54,14 +54,6 @@ export default function Advertising() {
           </div>
         ))}
       </div>
-      <a
-        href="https://www.profitableratecpmnetwork.com/qy5nbhnbhp?key=79a2719fe6f846b6cc640b28a429df78"
-        target="_blank"
-        rel="nofollow sponsored noopener noreferrer"
-        className="mt-5 block text-center text-xs text-gray-500 hover:text-emerald-700 hover:underline"
-      >
-        Sponsored link
-      </a>
     </aside>
   );
 }
