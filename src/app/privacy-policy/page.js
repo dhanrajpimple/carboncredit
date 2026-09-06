@@ -1,6 +1,8 @@
 export const metadata = {
-  title: "Privacy Policy | BuyCarbonCredit India",
+  title: "Privacy Policy",
   description: "Privacy Policy for BuyCarbonCredit.in. Learn how we collect, use, and protect your data.",
+  alternates: { canonical: "https://buycarboncredit.in/privacy-policy" },
+  robots: { index: true, follow: true },
 };
 
 export default function PrivacyPolicyPage() {
@@ -10,7 +12,7 @@ export default function PrivacyPolicyPage() {
         <h1 className="text-4xl font-extrabold text-gray-900 mb-8">Privacy Policy</h1>
         
         <div className="prose prose-lg text-gray-700 max-w-none space-y-6">
-          <p><strong>Last Updated: [Current Date]</strong></p>
+          <p><strong>Last updated: 6 September 2026</strong></p>
 
           <p>
             At BuyCarbonCredit.in (&quot;us&quot;, &quot;we&quot;, or &quot;our&quot;), accessible from https://buycarboncredit.in, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by BuyCarbonCredit.in and how we use it.
@@ -18,7 +20,7 @@ export default function PrivacyPolicyPage() {
 
           <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Information We Collect</h2>
           <p>
-            We collect personal information that you voluntarily provide to us when registering on the website, expressing an interest in obtaining information about us or our products and services, or otherwise contacting us. The continuous use of our website constitutes your agreement to this data collection.
+            We collect personal information that you voluntarily provide when submitting a farmer registration. Optional analytics data is collected only after you accept analytics cookies.
           </p>
           <ul className="list-disc pl-6 space-y-2">
             <li><strong>Personal details:</strong> Name, Email Address, Phone Number, State, District.</li>
@@ -49,6 +51,11 @@ export default function PrivacyPolicyPage() {
             Google is one of a third-party vendor on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to our site and other sites on the internet. However, visitors may choose to decline the use of DART cookies by visiting the Google ad and content network Privacy Policy.
           </p>
 
+          <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Advertising Measurement</h2>
+          <p>
+            If you accept optional analytics cookies, Google Ads measurement may record page visits and completed registrations so we can understand campaign performance. If you decline, the optional Google Ads tag is not loaded by this website. Your choice is stored in your browser and does not affect registration or payment functionality.
+          </p>
+
           <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Children&apos;s Information</h2>
           <p>
             Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity. BuyCarbonCredit.in does not knowingly collect any Personal Identifiable Information from children under the age of 13.
@@ -59,10 +66,7 @@ export default function PrivacyPolicyPage() {
             We may update our Privacy Policy from time to time. Thus, we advise you to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately, after they are posted on this page.
           </p>
 
-          <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Contact Us</h2>
-          <p>
-            If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at <strong>dhanraj.webdev@gmail.com</strong>.
-          </p>
+          <p className="mt-8">Legal contact information is available in the Terms &amp; Conditions.</p>
         </div>
       </div>
     </div>

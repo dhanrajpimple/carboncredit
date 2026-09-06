@@ -1,41 +1,34 @@
 # BuyCarbonCredit.in
 
-BuyCarbonCredit.in is an India-focused carbon credit marketplace and education hub for farmers, farmer producer organizations, companies, ESG teams, CSR buyers, and net-zero buyers.
+BuyCarbonCredit.in is a small, independently operated marketplace for farmer-provided carbon-project listings. It is not a government agency, carbon registry, exchange, broker, verifier, certification body, or financial adviser.
 
-## Primary Pages
+## Primary pages
 
 - Home: https://buycarboncredit.in/
-- Buy carbon credits in India: https://buycarboncredit.in/buy-carbon-credit
-- Seller listings: https://buycarboncredit.in/seller-listings
-- Sell carbon credits in India: https://buycarboncredit.in/how-to-sell-carbon-credits-india
-- Carbon credit registration for farmers: https://buycarboncredit.in/carbon-credit-registration
-- Carbon credit price in India: https://buycarboncredit.in/carbon-credit-price
-- Carbon credit price per acre: https://buycarboncredit.in/carbon-credit-price-per-acre
-- Carbon credit calculator: https://buycarboncredit.in/carbon-credit-calculator
-- Carbon credit blog: https://buycarboncredit.in/blog
-- RSS feed: https://buycarboncredit.in/rss.xml
+- Farmer project listings: https://buycarboncredit.in/seller-listings
+- Buyer due-diligence guide: https://buycarboncredit.in/global-buyers
+- Farmer participation guide: https://buycarboncredit.in/how-to-sell-carbon-credits-india
+- Marketplace registration explanation: https://buycarboncredit.in/carbon-credit-registration
+- Farmer registration and payment form: https://buycarboncredit.in/contact
+- Carbon-credit pricing guide: https://buycarboncredit.in/carbon-credit-price
+- Carbon credits per acre explanation: https://buycarboncredit.in/carbon-credit-price-per-acre
+- Scenario calculator: https://buycarboncredit.in/carbon-credit-calculator
+- Educational articles: https://buycarboncredit.in/blog
+- Terms and Conditions: https://buycarboncredit.in/terms
 
-## Main Topics
+## Marketplace registration
 
-- Buy carbon credits in India
-- Sell carbon credits from farms in India
-- Carbon credit price in India
-- Carbon credit price per acre
-- Farmer carbon credit registration
-- Soil carbon credits
-- Agriculture carbon credits
-- Carbon credit buyers for farmers
-- Verified carbon credits
-- ESG, CSR, BRSR and net-zero carbon offsets
-- Carbon credit marketplace for Indian farmers and companies
-- Carbon credit scam prevention and verification
+The platform charges farmers a one-time ₹199 fee for submitting one marketplace listing. This is a private marketplace fee, not a government carbon-credit registration fee. It is not a subscription and does not automatically recur.
 
-## Audience
+## Important limitations
 
-Farmers can use the site to learn eligibility, registration, carbon farming practices, documentation, verification, price expectations, and safe selling steps.
+- Listings contain information supplied by sellers.
+- A listing is not an issued, certified, validated, or independently verified carbon credit.
+- The platform does not issue, certify, transfer, or retire carbon credits.
+- Registration does not guarantee project eligibility, verification, issued credits, buyer interest, a sale, price, payment, or income.
+- Acreage and calculator estimates are illustrative and require independent assessment.
+- Buyers and sellers are responsible for due diligence, agreements, professional advice, verification, registry procedures, payments, taxes, and legal compliance.
 
-Companies can use the site to discover farmer-linked credits, compare seller listings, understand price ranges, prepare ESG and CSR procurement, and buy India-based carbon credits.
+## Official Indian-market context
 
-## Important Guidance
-
-Carbon credit income is not guaranteed. Carbon credit price depends on land, practice, verification quality, credit volume, buyer demand, vintage, methodology, and market conditions. Users should avoid upfront-fee agents, guaranteed-income promises, duplicate selling, and unverified certificates.
+India's Carbon Credit Trading Scheme has compliance and offset mechanisms. Participation and issuance under the official framework depend on applicable Bureau of Energy Efficiency procedures, published methodologies, validation or verification requirements, and registry processes. Registration on BuyCarbonCredit.in is separate from official CCTS project registration.

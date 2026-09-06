@@ -28,38 +28,51 @@ const PRACTICE_MULTIPLIER = {
   "Mixed All Practices": 1.8,
 };
 
+const CURRENCIES = {
+  "INR": { symbol: "₹", rate: 1, min: 500, max: 4000, label: "₹ INR" },
+  "USD": { symbol: "$", rate: 0.012, min: 6, max: 48, label: "$ USD" },
+  "EUR": { symbol: "€", rate: 0.011, min: 5, max: 44, label: "€ EUR" },
+  "GBP": { symbol: "£", rate: 0.0095, min: 5, max: 38, label: "£ GBP" },
+};
+
 export default function CarbonCreditCalculator() {
   const [landAcres, setLandAcres] = useState("");
   const [cropType, setCropType] = useState("Paddy (Rice)");
   const [practice, setPractice] = useState("No-till Farming");
   const [pricePerTon, setPricePerTon] = useState(1500);
   const [result, setResult] = useState(null);
+  const [currency, setCurrency] = useState("INR");
+  const [landUnit, setLandUnit] = useState("acres");
+
+  const cur = CURRENCIES[currency];
 
   const calculate = () => {
-    const acres = parseFloat(landAcres);
-    if (!acres || acres <= 0) return;
+    let inputValue = parseFloat(landAcres);
+    if (!inputValue || inputValue <= 0) return;
+    // Convert hectares to acres for calculation
+    const acres = landUnit === "hectares" ? inputValue * 2.471 : inputValue;
     const crop = CROP_RATES[cropType];
     const multiplier = PRACTICE_MULTIPLIER[practice];
     const minTons = acres * crop.min * multiplier;
     const maxTons = acres * crop.max * multiplier;
-    const minEarnings = minTons * pricePerTon;
-    const maxEarnings = maxTons * pricePerTon;
-    setResult({ minTons, maxTons, minEarnings, maxEarnings, acres });
+    const minEarnings = minTons * pricePerTon * cur.rate;
+    const maxEarnings = maxTons * pricePerTon * cur.rate;
+    setResult({ minTons, maxTons, minEarnings, maxEarnings, acres, displayUnit: landUnit, displayValue: inputValue });
   };
 
   return (
     <div className="bg-white min-h-screen">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-emerald-700 via-emerald-600 to-teal-500 py-20 text-white text-center">
+      <section className="bg-gradient-to-br from-gray-900 via-emerald-950 to-gray-900 py-20 text-white text-center">
         <div className="max-w-4xl mx-auto px-4">
-          <p className="text-emerald-200 font-bold text-sm uppercase tracking-widest mb-4">Free Tool — India&apos;s Best — Last Updated: June 2026</p>
+          <p className="text-emerald-300 font-bold text-sm uppercase tracking-widest mb-4">Free Tool — Global Calculator — Updated: June 2026</p>
           <h1 className="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">
-            Carbon Credit Calculator for Indian Farmers
+            Carbon Credit Calculator for Farmers Worldwide
           </h1>
-          <p className="text-emerald-100 text-lg max-w-3xl mx-auto mb-2">
-            Estimate how many carbon credits you can generate and earn per year from your farm. Free income calculator for farmers across India.
+          <p className="text-gray-300 text-lg max-w-3xl mx-auto mb-2">
+            Estimate how many carbon credits you can generate and earn per year from your farm. Multi-currency support: USD, EUR, GBP, INR. Acres & Hectares.
           </p>
-          <p className="text-emerald-200 text-base">
+          <p className="text-gray-400 text-base">
             कार्बन क्रेडिट कैलकुलेटर। शेतकऱ्यांसाठी कार्बन क्रेडिट आय कॅल्क्युलेटर।
           </p>
         </div>
@@ -69,23 +82,62 @@ export default function CarbonCreditCalculator() {
         {/* Calculator Card */}
         <div className="bg-white rounded-3xl border border-gray-100 shadow-2xl overflow-hidden mb-16">
           <div className="bg-emerald-50 p-8 border-b border-emerald-100">
-            <h2 className="text-2xl font-bold text-gray-900">Calculate Your Carbon Credit Income</h2>
-            <p className="text-gray-500 mt-1">कार्बन क्रेडिट आय का अनुमान लगाएं | कार्बन क्रेडिट आय मोजा</p>
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900">Explore a Carbon Credit Scenario</h2>
+                <p className="text-gray-500 mt-1">कार्बन क्रेडिट आय का अनुमान लगाएं | Multi-currency support</p>
+              </div>
+              <div className="flex gap-2">
+                {Object.keys(CURRENCIES).map(c => (
+                  <button
+                    key={c}
+                    onClick={() => setCurrency(c)}
+                    className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                      currency === c
+                        ? "bg-emerald-600 text-white shadow-sm"
+                        : "bg-white text-gray-600 border border-gray-200 hover:border-emerald-300"
+                    }`}
+                  >
+                    {CURRENCIES[c].label}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
           <div className="p-8 grid md:grid-cols-2 gap-8">
             {/* Inputs */}
             <div className="space-y-6">
               <div>
-                <label className="block text-sm font-bold text-gray-700 mb-2">
-                  🌾 Land Area (in Acres) — जमीन कितनी एकड़ / एकर किती?
-                </label>
+                <div className="flex items-center justify-between mb-2">
+                  <label className="text-sm font-bold text-gray-700">
+                    🌾 Land Area
+                  </label>
+                  <div className="flex gap-1">
+                    <button
+                      onClick={() => setLandUnit("acres")}
+                      className={`px-2.5 py-1 rounded-md text-xs font-bold transition-all ${
+                        landUnit === "acres" ? "bg-emerald-600 text-white" : "bg-gray-100 text-gray-500 hover:bg-gray-200"
+                      }`}
+                    >
+                      Acres
+                    </button>
+                    <button
+                      onClick={() => setLandUnit("hectares")}
+                      className={`px-2.5 py-1 rounded-md text-xs font-bold transition-all ${
+                        landUnit === "hectares" ? "bg-emerald-600 text-white" : "bg-gray-100 text-gray-500 hover:bg-gray-200"
+                      }`}
+                    >
+                      Hectares
+                    </button>
+                  </div>
+                </div>
                 <input
                   type="number"
                   min="0.5"
                   step="0.5"
                   value={landAcres}
                   onChange={(e) => setLandAcres(e.target.value)}
-                  placeholder="e.g. 5"
+                  placeholder={landUnit === "acres" ? "e.g. 5 acres" : "e.g. 2 hectares"}
                   className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 text-lg font-semibold focus:outline-none focus:border-emerald-500 transition-all"
                 />
               </div>
@@ -141,7 +193,7 @@ export default function CarbonCreditCalculator() {
                 onClick={calculate}
                 className="w-full bg-emerald-600 text-white py-4 rounded-xl font-extrabold text-lg hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-200 active:scale-95"
               >
-                Calculate My Carbon Earnings →
+                Calculate Illustrative Scenario →
               </button>
             </div>
 
@@ -155,17 +207,17 @@ export default function CarbonCreditCalculator() {
                       {result.minTons.toFixed(1)} – {result.maxTons.toFixed(1)}
                       <span className="text-xl font-semibold text-gray-500 ml-2">tons CO₂/yr</span>
                     </p>
-                    <p className="text-sm text-gray-500 mt-1">from {result.acres} acres of farmland</p>
+                    <p className="text-sm text-gray-500 mt-1">from {result.displayValue} {result.displayUnit} of farmland ({result.acres.toFixed(1)} acres)</p>
                   </div>
                   <div className="bg-amber-50 rounded-2xl p-6 border border-amber-100">
-                    <p className="text-sm text-amber-600 font-bold uppercase tracking-widest mb-1">Annual Expected Income</p>
+                    <p className="text-sm text-amber-600 font-bold uppercase tracking-widest mb-1">Illustrative gross value ({currency})</p>
                     <p className="text-4xl font-extrabold text-gray-900">
-                      ₹{Math.round(result.minEarnings).toLocaleString("en-IN")} –
+                      {cur.symbol}{Math.round(result.minEarnings).toLocaleString()} –
                     </p>
                     <p className="text-4xl font-extrabold text-emerald-700">
-                      ₹{Math.round(result.maxEarnings).toLocaleString("en-IN")}
+                      {cur.symbol}{Math.round(result.maxEarnings).toLocaleString()}
                     </p>
-                    <p className="text-sm text-gray-500 mt-2">at ₹{pricePerTon.toLocaleString("en-IN")}/ton market rate</p>
+                    <p className="text-sm text-gray-500 mt-2">at ₹{pricePerTon.toLocaleString("en-IN")}/ton base rate ({currency})</p>
                   </div>
                   <div className="bg-blue-50 rounded-2xl p-4 border border-blue-100">
                     <p className="text-xs text-blue-600 font-semibold mb-2">💡 Pro Tip</p>
@@ -181,7 +233,7 @@ export default function CarbonCreditCalculator() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 11h.01M12 11h.01M15 11h.01M4 19h16a2 2 0 002-2V7a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                   <p className="font-semibold text-gray-500 mb-2">Enter your farm details</p>
-                  <p className="text-sm">Fill the form and click Calculate to see your estimated carbon credit income</p>
+                  <p className="text-sm">Enter assumptions to see an illustrative scenario. This is not a prediction or offer.</p>
                   <p className="text-xs mt-2 text-gray-400">किसान जानकारी भरें और अपनी कमाई का अनुमान लगाएं</p>
                 </div>
               )}
@@ -259,7 +311,7 @@ export default function CarbonCreditCalculator() {
               </tbody>
             </table>
           </div>
-          <p className="text-xs text-gray-400 mt-3">* Estimates are per acre per year under standard sustainable practices. Actual earnings depend on verification, market conditions.</p>
+          <p className="text-xs text-gray-500 mt-3">* Illustrative assumptions only. Acreage and practice do not prove eligibility or issued credits. Actual results depend on the applicable methodology, baseline, monitoring, verification, issuance, project costs, contract terms, and buyer demand.</p>
         </section>
 
         {/* FAQs */}
@@ -271,7 +323,7 @@ export default function CarbonCreditCalculator() {
               { q: "What is the minimum land to earn carbon credits in India?", a: "You need a minimum of 1 acre of agricultural land to register and generate carbon credits in India." },
               { q: "How often do farmers get paid for carbon credits?", a: "Typically, carbon credit payments happen annually or on a project cycle of 3–5 years. Farmers receive lump sum payments after verification of carbon sequestration." },
               { q: "क्या मैं 2 एकड़ जमीन पर कार्बन क्रेडिट से कमाई कर सकता हूँ? (Can I earn with 2 acres?)", a: "हाँ, 2 एकड़ की जमीन से भी आप सालाना ₹6,000 से ₹40,000+ तक कमा सकते हैं, फसल और खेती की पद्धति के अनुसार। Yes, 2 acres can generate ₹6,000–₹40,000+ annually depending on crop and practices." },
-              { q: "शेतकरी कार्बन क्रेडिट कसे विकू शकतात? (How can farmers sell carbon credits?)", a: "BuyCarbonCredit.in वर मोफत नोंदणी करा, शेतजमिनीची माहिती द्या, पडताळणी करा आणि मार्केटप्लेसवर विक्री करा. Register free on BuyCarbonCredit.in, submit farm details, get verified, and sell on the marketplace." },
+              { q: "शेतकरी कार्बन प्रकल्पाची माहिती कशी सूचीबद्ध करू शकतात?", a: "BuyCarbonCredit.in वर ₹199 एक-वेळ शुल्क भरून फार्मची मार्केटप्लेस नोंदणी करता येते. ही नोंद कार्बन क्रेडिट तयार किंवा प्रमाणित करत नाही आणि विक्रीची हमी देत नाही." },
             ].map((faq, i) => (
               <div key={i} className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
                 <h3 className="font-bold text-gray-900 mb-2">{faq.q}</h3>

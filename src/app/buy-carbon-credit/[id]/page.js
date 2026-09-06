@@ -22,18 +22,20 @@ export async function generateMetadata({ params }) {
     }
 
     return {
-      title: `${farmer.name} Carbon Credit Listing in ${farmer.state} | BuyCarbonCredit.in`,
-      description: `View the carbon credit seller page for ${farmer.name} in ${farmer.location_label}. Check estimated credits, land size, and seller location details.`,
+      title: `${farmer.name} Farm Project Listing — ${farmer.state}`,
+      description: `View seller-provided farm project information for ${farmer.name} in ${farmer.location_label}, including land area and estimated carbon-credit volume.`,
       alternates: {
         canonical: `https://buycarboncredit.in/buy-carbon-credit/${farmer.id}`,
       },
       openGraph: {
-        title: `${farmer.name} Carbon Credit Listing | BuyCarbonCredit.in`,
-        description: `Carbon credit seller page for ${farmer.name} in ${farmer.location_label}.`,
+        title: `${farmer.name} Farm Project Listing — ${farmer.state}`,
+        description: `Seller-provided farm project listing in ${farmer.location_label}. Estimates require independent buyer verification.`,
         url: `https://buycarboncredit.in/buy-carbon-credit/${farmer.id}`,
         type: "website",
         locale: "en_IN",
       },
+      twitter: { card: "summary_large_image", title: `${farmer.name} Farm Project Listing — ${farmer.state}`, description: `Seller-provided farm project information in ${farmer.location_label}.` },
+      robots: { index: true, follow: true },
     };
   } catch (error) {
     console.error("Seller metadata fetch error:", error);
@@ -73,7 +75,7 @@ export default async function FarmerDetailPage({ params }) {
       addressLocality: farmer.district !== "N/A" ? farmer.district : farmer.state,
       postalCode: farmer.pincode || undefined,
     },
-    description: `Carbon credit seller listing for ${farmer.name} with ${farmer.carbon_credits} estimated credits from ${farmer.land_acres} acres.`,
+    description: `Seller-provided farm project listing for ${farmer.name} with an estimated ${farmer.carbon_credits} tonnes CO2e from ${farmer.land_acres} acres. Estimates are not verified or issued credits.`,
     url: `https://buycarboncredit.in/buy-carbon-credit/${farmer.id}`,
   };
 
@@ -227,11 +229,12 @@ export default async function FarmerDetailPage({ params }) {
 
             <aside className="space-y-6">
               <div className="rounded-3xl border border-emerald-100 bg-emerald-50 p-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">Contact This Seller</h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">Seller contact</h2>
                 <p className="text-gray-600 leading-relaxed mb-6">
                   All contact actions are kept on this separate page so buyers can review the seller location first and then decide whether to call, email, or message.
                 </p>
-                <div className="grid gap-3">
+                {farmer.phone || farmer.email ? <div className="grid gap-3">
+                  {farmer.phone && (
                   <a
                     href={getWhatsAppHref(farmer.phone)}
                     target="_blank"
@@ -240,19 +243,24 @@ export default async function FarmerDetailPage({ params }) {
                   >
                     WhatsApp Seller
                   </a>
+                  )}
+                  {farmer.email && (
                   <a
                     href={`mailto:${farmer.email}`}
                     className="flex items-center justify-center bg-gray-900 text-white py-3 rounded-xl font-bold hover:bg-black transition-colors"
                   >
                     Email Seller
                   </a>
+                  )}
+                  {farmer.phone && (
                   <a
                     href={`tel:${farmer.phone}`}
                     className="flex items-center justify-center border border-emerald-600 text-emerald-700 py-3 rounded-xl font-bold hover:bg-white transition-colors"
                   >
                     Call {farmer.phone}
                   </a>
-                </div>
+                  )}
+                </div> : <p className="text-sm text-gray-600">No public contact details are available for this listing.</p>}
               </div>
 
               <div className="rounded-3xl border border-gray-100 bg-white shadow-sm p-8">

@@ -1,30 +1,18 @@
 export const metadata = {
-  title: "Carbon Credit Calculator India 2026 — Estimate Your Farm Income | कार्बन क्रेडिट कैलकुलेटर",
-  description: "Free carbon credit calculator for Indian farmers. Calculate how many carbon credits your farm can generate and your annual income. कार्बन क्रेडिट से सालाना कितना कमाएं? Carbon credit income estimator for all Indian states.",
-  keywords: [
-    "carbon credit calculator India",
-    "carbon credit income calculator",
-    "how much carbon credit can I earn",
-    "carbon credit per acre calculator",
-    "carbon farming income estimator India",
-    "कार्बन क्रेडिट कैलकुलेटर",
-    "carbon credit se kitna paisa milega",
-    "carbon credit calculator for farmers",
-    "carbon income calculator India",
-    "carbon credit calculator Maharashtra",
-    "carbon credit calculator UP",
-    "farmer carbon credit estimator",
-    "carbon credit calculator 2026",
-  ],
+  title: "Carbon Credit Scenario Calculator for Farms",
+  description: "Explore user-adjustable carbon-credit scenarios. Results are illustrative and are not verification, a market quote, or guaranteed income.",
+  keywords: ["carbon credit calculator India", "farm carbon credit scenario", "carbon credit per acre calculator", "कार्बन क्रेडिट कैलकुलेटर"],
   alternates: {
     canonical: "https://buycarboncredit.in/carbon-credit-calculator",
   },
   openGraph: {
-    title: "Carbon Credit Calculator for Indian Farmers 2026 — Estimate Your Income",
-    description: "Free tool: calculate your carbon credit income by crop, land size & practice. कार्बन क्रेडिट कैलकुलेटर — किसान आय गणना।",
+    title: "Carbon Credit Scenario Calculator for Farms",
+    description: "Illustrative scenario tool only; actual eligibility, issued credits, prices, costs, sales, and income can differ.",
     url: "https://buycarboncredit.in/carbon-credit-calculator",
     type: "website",
+    locale: "en_IN",
   },
+  twitter: { card: "summary_large_image", title: "Carbon Credit Scenario Calculator for Farms", description: "Explore adjustable farm carbon-credit scenarios without guaranteed-output claims." },
 };
 
 export default function CalculatorLayout({ children }) {

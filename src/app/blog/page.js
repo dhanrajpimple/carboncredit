@@ -1,9 +1,11 @@
 import Link from "next/link";
 import blogs from "@/data/blogs.json";
 
+const indexableBlogs = blogs.filter((post) => post.index !== false);
+
 export const metadata = {
-  title: "Carbon Credit India — Guides, Prices & News Blog | BuyCarbonCredit.in",
-  description: "Expert guides on carbon credit prices, how to sell carbon credits in India, farmer registration, and net-zero strategies. Read in English, Hindi, Marathi. Updated 2026.",
+  title: "Carbon Credit Guides for Farmers and Buyers in India",
+  description: "Practical carbon credit guides for Indian farmers and buyers covering CCTS, project eligibility, verification, pricing risks, contracts and marketplace listings.",
   keywords: [
     "carbon credit blog India",
     "carbon credits blog India",
@@ -27,8 +29,8 @@ export const metadata = {
     canonical: "https://buycarboncredit.in/blog",
   },
   openGraph: {
-    title: "Carbon Credit India — Guides & News Blog | BuyCarbonCredit.in",
-    description: "Expert carbon credit guides in English, Hindi & Marathi. Prices, registration, farming practices, and news for Indian farmers.",
+    title: "Carbon Credit Guides for Farmers and Buyers in India",
+    description: "Read practical guides about CCTS, project eligibility, verification, pricing risks and farmer marketplace listings.",
     url: "https://buycarboncredit.in/blog",
     type: "website",
     locale: "en_IN",
@@ -48,7 +50,7 @@ const blogPageSchema = {
         "url": "https://buycarboncredit.in"
     },
     "inLanguage": ["en-IN", "hi-IN", "mr-IN", "gu-IN", "te-IN", "ta-IN", "kn-IN", "pa-IN"],
-    "blogPost": blogs.map(post => ({
+    "blogPost": indexableBlogs.map(post => ({
         "@type": "BlogPosting",
         "headline": post.title,
         "description": post.excerpt,
@@ -85,8 +87,8 @@ const blogItemListSchema = {
     "@type": "ItemList",
     "name": "Carbon Credit Blog Articles",
     "itemListOrder": "https://schema.org/ItemListOrderDescending",
-    "numberOfItems": blogs.length,
-    "itemListElement": blogs.map((post, index) => ({
+    "numberOfItems": indexableBlogs.length,
+    "itemListElement": indexableBlogs.map((post, index) => ({
         "@type": "ListItem",
         "position": index + 1,
         "url": `https://buycarboncredit.in/blog/${post.id}`,
@@ -152,7 +154,7 @@ export default function BlogPage() {
                     {/* Header */}
                     <header className="text-center mb-16">
                         <p className="text-emerald-600 font-bold text-sm uppercase tracking-widest mb-4">
-                            India&apos;s #1 Carbon Credit Knowledge Hub
+                            Carbon Credit Guides for India
                         </p>
                         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">
                             Carbon Credit Guides & <span className="text-emerald-600">News Blog</span>

@@ -1,20 +1,22 @@
 import SellerListingsBrowser from "@/components/SellerListingsBrowser";
 
 export const metadata = {
-  title: "Seller List | Carbon Credit Sellers in India | BuyCarbonCredit.in",
+  title: "Farmer Carbon Project Listings in India",
   description:
-    "Dedicated seller list for buyers. View carbon credit sellers in India by state, district, acreage, and estimated credits without extra page clutter.",
+    "Browse farmer-provided carbon project listings in India by state, district, acreage and estimated volume. Buyers must independently verify every claim.",
   alternates: {
     canonical: "https://buycarboncredit.in/seller-listings",
   },
   openGraph: {
-    title: "Seller List | Carbon Credit Sellers in India",
+    title: "Farmer Carbon Project Listings in India",
     description:
-      "Open the seller-only page to quickly browse carbon credit sellers, locations, and estimated credits.",
+      "Browse seller-provided farm and carbon-project information by location, land area and estimated volume.",
     url: "https://buycarboncredit.in/seller-listings",
     type: "website",
     locale: "en_IN",
   },
+  twitter: { card: "summary_large_image", title: "Farmer Carbon Project Listings in India", description: "Browse farmer-provided project listings and conduct independent due diligence." },
+  robots: { index: true, follow: true },
 };
 
 const breadcrumbSchema = {
@@ -38,8 +40,8 @@ export default function SellerListingsPage() {
         <SellerListingsBrowser
           sectionId="seller-listings"
           eyebrow="Seller list only"
-          title="Carbon Credit Sellers in India"
-          description="This page is made only for buyers who want to quickly find sellers. Use the filters, open each separate seller page, and see location details without digging through extra content."
+          title="Farmer Carbon Project Listings in India"
+          description="Browse seller-provided farm and project information. Estimated volumes are not verified or issued carbon credits; buyers must conduct independent due diligence."
           headingAs="h1"
         />
       </main>

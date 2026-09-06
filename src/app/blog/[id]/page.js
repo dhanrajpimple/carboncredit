@@ -4,6 +4,15 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import blogs from "@/data/blogs.json";
 
+const trimAtWord = (value, maxLength) => {
+    if (value.length <= maxLength) return value;
+    const shortened = value.slice(0, maxLength + 1);
+    return `${shortened.slice(0, shortened.lastIndexOf(" ")).trim()}…`;
+};
+
+const getSeoTitle = (post) => trimAtWord(post.title.split("|")[0].trim(), 52);
+const getSeoDescription = (post) => trimAtWord(post.excerpt.trim(), 155);
+
 export async function generateStaticParams() {
     return blogs.map((post) => ({
         id: post.id,
@@ -28,15 +37,15 @@ export async function generateMetadata({ params }) {
     ]));
 
     return {
-        title: `${post.title} | BuyCarbonCredit.in`,
-        description: post.excerpt,
+        title: getSeoTitle(post),
+        description: getSeoDescription(post),
         keywords: metadataKeywords,
         alternates: {
             canonical: `https://buycarboncredit.in/blog/${post.id}`,
         },
         openGraph: {
             title: post.title,
-            description: post.excerpt,
+            description: getSeoDescription(post),
             url: `https://buycarboncredit.in/blog/${post.id}`,
             type: "article",
             publishedTime: post.date,
@@ -45,8 +54,9 @@ export async function generateMetadata({ params }) {
         twitter: {
             card: "summary_large_image",
             title: post.title,
-            description: post.excerpt,
+            description: getSeoDescription(post),
         },
+        robots: { index: post.index !== false, follow: true },
         category: post.category,
     };
 }
@@ -105,7 +115,8 @@ export default async function BlogPostPage({ params }) {
         },
         "keywords": post.keywords?.join(", "),
         "inLanguage": post.lang,
-        "articleBody": post.content
+        "articleSection": post.category,
+        "wordCount": post.content.trim().split(/\s+/).length
     };
 
     // BreadcrumbList schema for rich snippets in Google
@@ -270,8 +281,7 @@ export default async function BlogPostPage({ params }) {
                     <div className="bg-emerald-600 rounded-3xl p-8 md:p-12 text-center text-white shadow-xl">
                         <h2 className="text-3xl font-bold mb-4">Ready to Earn from Carbon Credits?</h2>
                         <p className="text-emerald-100 mb-8 max-w-2xl mx-auto text-lg hover:text-white transition-colors">
-                            Join thousands of Indian farmers generating ₹50,000+ per year. 
-                            Companies can directly purchase verified offsets to meet ESG goals.
+                            Farmers can publish project information for potential buyers to review. Registration, eligibility, sales, prices, and income are not guaranteed.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <Link href="/contact" className="px-8 py-3 bg-white text-emerald-600 rounded-xl font-bold hover:bg-emerald-50 transition-colors">
@@ -288,7 +298,7 @@ export default async function BlogPostPage({ params }) {
                       <h3 className="text-xl font-bold mb-4">Read more from the BuyCarbonCredit blog</h3>
                       <ul className="list-disc list-inside space-y-2 text-emerald-700">
                         <li><Link href="/carbon-credit-price-per-acre" className="hover:underline">Carbon credit price per acre in India 2026</Link></li>
-                        <li><Link href="/carbon-credit-registration" className="hover:underline">How to register for carbon credits in India (free)</Link></li>
+                        <li><Link href="/carbon-credit-registration" className="hover:underline">Farmer marketplace registration (₹199)</Link></li>
                         <li><Link href="/how-to-sell-carbon-credits-india" className="hover:underline">How to sell carbon credits from your farm</Link></li>
                         <li><Link href="/carbon-credit-calculator" className="hover:underline">Carbon credit income calculator — estimate your earnings</Link></li>
                         <li><Link href="/carbon-credit-price" className="hover:underline">Current carbon credit price in India 2026</Link></li>

@@ -32,9 +32,9 @@ export function GET() {
       <channel>
         <title>BuyCarbonCredit India Blog</title>
         <link>${baseUrl}/blog</link>
-        <description>Carbon credit guides for Indian farmers and companies: buying, selling, pricing, verification, farming, ESG, CSR and net-zero topics.</description>
+        <description>Practical carbon credit guides for Indian farmers and buyers covering CCTS, eligibility, verification, pricing risks and contracts.</description>
         <language>en-IN</language>
-        <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+        <lastBuildDate>${new Date(Math.max(...blogs.map((post) => new Date(post.date).getTime()))).toUTCString()}</lastBuildDate>
         ${items}
       </channel>
     </rss>`;

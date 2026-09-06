@@ -5,12 +5,12 @@ import { useState } from "react";
 
 const MOBILE_LINKS = [
   { href: "/", label: "Home" },
-  { href: "/seller-listings", label: "Buy Carbon Credits" },
+  { href: "/seller-listings", label: "Browse Farmers" },
   { href: "/buy-carbon-credit", label: "Buyer Guide" },
   { href: "/carbon-credit-price", label: "Carbon Credit Prices 2026" },
   { href: "/carbon-credit-calculator", label: "Carbon Credit Calculator" },
   { href: "/blog", label: "Blog and Guides" },
-  { href: "/contact", label: "Register Your Farm" },
+  { href: "/contact", label: "Farmer Registration — ₹199" },
 ];
 
 const Navbar = () => {
@@ -21,21 +21,21 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+    <nav className="bg-white/95 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 flex items-center gap-2">
             <Link href="/" className="text-xl font-bold text-emerald-600 tracking-tight" onClick={close}>
               Buy Carbon Credit
             </Link>
           </div>
 
-          <div className="hidden md:flex items-center space-x-1">
+          <div className="hidden lg:flex items-center space-x-1">
             <Link href="/" className="px-3 py-2 text-gray-600 hover:text-emerald-600 font-medium transition-colors rounded-lg hover:bg-emerald-50">
               Home
             </Link>
             <Link href="/seller-listings" className="px-3 py-2 text-gray-600 hover:text-emerald-600 font-medium transition-colors rounded-lg hover:bg-emerald-50">
-              Buy Credits
+              Farmers
             </Link>
             <Link href="/buy-carbon-credit" className="px-3 py-2 text-gray-600 hover:text-emerald-600 font-medium transition-colors rounded-lg hover:bg-emerald-50">
               Buyer Guide
@@ -53,11 +53,11 @@ const Navbar = () => {
               href="/contact"
               className="ml-2 px-5 py-2 bg-emerald-600 text-white rounded-xl font-bold hover:bg-emerald-700 transition-all shadow-sm shadow-emerald-200"
             >
-              Register Farm
+              Register Farm — ₹199
             </Link>
           </div>
 
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-600 hover:text-emerald-600 focus:outline-none p-2"
@@ -76,7 +76,7 @@ const Navbar = () => {
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-white border-b border-gray-100 shadow-lg">
+        <div className="lg:hidden bg-white border-b border-gray-100 shadow-lg">
           <div className="px-4 pt-2 pb-4 space-y-1">
             {MOBILE_LINKS.map((item) => (
               <Link

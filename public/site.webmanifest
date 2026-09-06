@@ -1,7 +1,7 @@
 {
   "name": "Buy Carbon Credit",
   "short_name": "Buy Carbon Credit",
-  "description": "India's carbon credit marketplace for farmers and companies.",
+  "description": "Independent marketplace for farmer-provided carbon project listings in India.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

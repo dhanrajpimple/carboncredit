@@ -76,12 +76,11 @@ export default function TermsPage() {
                         </p>
                         <div className="mt-4 font-medium">
                             <p>Email: dhanraj.webdev@gmail.com</p>
-                            <p>Phone/WhatsApp: +91 72191 11601</p>
                         </div>
                     </section>
 
                     <section className="pt-8 border-t">
-                        <p className="text-sm">Last updated: {new Date().toLocaleDateString('en-IN')}</p>
+                        <p className="text-sm">Last updated: 6 September 2026</p>
                     </section>
                 </div>
             </div>

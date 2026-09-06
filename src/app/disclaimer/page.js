@@ -1,6 +1,8 @@
 export const metadata = {
-  title: "Disclaimer | BuyCarbonCredit India",
+  title: "Marketplace Disclaimer",
   description: "Disclaimer for BuyCarbonCredit.in. General information purposes only.",
+  alternates: { canonical: "https://buycarboncredit.in/disclaimer" },
+  robots: { index: true, follow: true },
 };
 
 export default function DisclaimerPage() {
@@ -10,7 +12,7 @@ export default function DisclaimerPage() {
         <h1 className="text-4xl font-extrabold text-gray-900 mb-8">Disclaimer</h1>
         
         <div className="prose prose-lg text-gray-700 max-w-none space-y-6">
-          <p><strong>Last Updated: [Current Date]</strong></p>
+          <p><strong>Last updated: 6 September 2026</strong></p>
 
           <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">1. General Information</h2>
           <p>
@@ -41,10 +43,7 @@ export default function DisclaimerPage() {
             We may use advertising networks like Google AdSense to monetize the website. These third-party vendors use cookies to serve ads based on a user&apos;s prior visits to our website.
           </p>
 
-          <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Contact Us</h2>
-          <p>
-            If you have any questions or concerns regarding this disclaimer, please contact us at: <strong>dhanraj.webdev@gmail.com</strong>
-          </p>
+          <p className="mt-8">Legal contact information is available in the Terms &amp; Conditions.</p>
         </div>
       </div>
     </div>
