@@ -1,7 +1,7 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import GoogleAds from "@/components/GoogleAds";
+import AdsterraNativeBanner from "@/components/AdsterraNativeBanner";
 
 export const metadata = {
   metadataBase: new URL("https://buycarboncredit.in"),
@@ -67,14 +67,13 @@ export default function RootLayout({ children }) {
     <html lang="en-IN" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <link rel="alternate" type="application/rss+xml" title="Buy Carbon Credit Blog RSS" href="https://buycarboncredit.in/rss.xml" />
-        <meta name="google-adsense-account" content="ca-pub-5017050359206389" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       </head>
       <body className="bg-white text-gray-900 antialiased">
-        <GoogleAds />
         <Navbar />
+        <AdsterraNativeBanner />
         <main className="min-h-screen">{children}</main>
         <Footer />
       </body>

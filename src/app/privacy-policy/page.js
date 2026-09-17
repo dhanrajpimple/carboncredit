@@ -46,14 +46,14 @@ export default function PrivacyPolicyPage() {
             We use &quot;cookies&quot; to store information including visitors&apos; preferences, and the pages on the website that the visitor accessed or visited.
           </p>
 
-          <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Google DoubleClick DART Cookie</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Advertising Partners</h2>
           <p>
-            Google is one of a third-party vendor on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to our site and other sites on the internet. However, visitors may choose to decline the use of DART cookies by visiting the Google ad and content network Privacy Policy.
+            Third-party advertising partners may use cookies or similar technologies to serve ads and measure ad performance. Their use of information is governed by their own privacy policies.
           </p>
 
           <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Advertising Measurement</h2>
           <p>
-            If you accept optional analytics cookies, Google Ads measurement may record page visits and completed registrations so we can understand campaign performance. If you decline, the optional Google Ads tag is not loaded by this website. Your choice is stored in your browser and does not affect registration or payment functionality.
+            Advertising partners may load third-party scripts to display sponsored placements and measure aggregate ad performance. Registration and payment functionality do not require visitors to interact with advertisements.
           </p>
 
           <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Children&apos;s Information</h2>
