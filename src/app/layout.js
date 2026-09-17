@@ -73,8 +73,8 @@ export default function RootLayout({ children }) {
       </head>
       <body className="bg-white text-gray-900 antialiased">
         <Navbar />
-        <AdsterraNativeBanner />
         <main className="min-h-screen">{children}</main>
+        <AdsterraNativeBanner />
         <Footer />
       </body>
     </html>
