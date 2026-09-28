@@ -1,7 +1,6 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import AdsterraNativeBanner from "@/components/AdsterraNativeBanner";
 
 export const metadata = {
   metadataBase: new URL("https://buycarboncredit.in"),
@@ -74,7 +73,7 @@ export default function RootLayout({ children }) {
       <body className="bg-white text-gray-900 antialiased">
         <Navbar />
         <main className="min-h-screen">{children}</main>
-        <AdsterraNativeBanner />
+       
         <Footer />
       </body>
     </html>
