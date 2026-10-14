@@ -28,6 +28,15 @@ export async function POST(req) {
       );
     }
 
+    if (!process.env.SUPABASE_SERVICE_ROLE_KEY) {
+      return NextResponse.json(
+        { error: "Payment was successful, but the server is missing SUPABASE_SERVICE_ROLE_KEY. Add it to the deployment environment so paid requests can be saved securely." },
+        { status: 500 }
+      );
+    }
+
+    const farmerCount = requestData.farmerCount ? Number(requestData.farmerCount) : null;
+
     const insertData = {
       organization_name: requestData.organizationName,
       organization_type: requestData.organizationType,
@@ -38,7 +47,7 @@ export async function POST(req) {
       target_state: requestData.targetState,
       target_district: requestData.targetDistrict,
       target_acres: Number(requestData.targetAcres || 0),
-      farmer_count: Number(requestData.farmerCount || 0),
+      farmer_count: farmerCount,
       planting_timeline: requestData.plantingTimeline,
       project_goal: requestData.projectGoal,
       notes: requestData.notes,
@@ -55,7 +64,10 @@ export async function POST(req) {
 
     if (dbError) {
       console.error("Enterprise request Supabase insert error:", dbError);
-      return NextResponse.json({ error: "Error saving request to database" }, { status: 500 });
+      return NextResponse.json(
+        { error: `Error saving request to database: ${dbError.message}` },
+        { status: 500 }
+      );
     }
 
     return NextResponse.json(
