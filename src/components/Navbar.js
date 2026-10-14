@@ -6,6 +6,7 @@ import { useState } from "react";
 const MOBILE_LINKS = [
   { href: "/", label: "Home" },
   { href: "/seller-listings", label: "Browse Farmers" },
+  { href: "/enterprise-ngo-tree-plantation", label: "Enterprise & NGO" },
   { href: "/buy-carbon-credit", label: "Buyer Guide" },
   { href: "/carbon-credit-price", label: "Carbon Credit Prices 2026" },
   { href: "/carbon-credit-calculator", label: "Carbon Credit Calculator" },
@@ -36,6 +37,9 @@ const Navbar = () => {
             </Link>
             <Link href="/seller-listings" className="px-3 py-2 text-gray-600 hover:text-emerald-600 font-medium transition-colors rounded-lg hover:bg-emerald-50">
               Farmers
+            </Link>
+            <Link href="/enterprise-ngo-tree-plantation" className="px-3 py-2 text-gray-600 hover:text-emerald-600 font-medium transition-colors rounded-lg hover:bg-emerald-50">
+              Enterprise & NGO
             </Link>
             <Link href="/buy-carbon-credit" className="px-3 py-2 text-gray-600 hover:text-emerald-600 font-medium transition-colors rounded-lg hover:bg-emerald-50">
               Buyer Guide

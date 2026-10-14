@@ -9,6 +9,7 @@ const staticRoutes = [
   { path: "/blog", changeFrequency: "weekly", priority: 0.95 },
   { path: "/buy-carbon-credit", changeFrequency: "weekly", priority: 0.9 },
   { path: "/seller-listings", changeFrequency: "weekly", priority: 0.9 },
+  { path: "/enterprise-ngo-tree-plantation", changeFrequency: "weekly", priority: 0.9 },
   { path: "/carbon-credit-price", changeFrequency: "weekly", priority: 0.9 },
   { path: "/carbon-credit-price-per-acre", changeFrequency: "monthly", priority: 0.85 },
   { path: "/carbon-credit-registration", changeFrequency: "monthly", priority: 0.85 },
