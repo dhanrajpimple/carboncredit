@@ -72,7 +72,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className="bg-white text-gray-900 antialiased">
         <Navbar />
-        <main className="min-h-screen">{children}</main>
+        <div className="min-h-screen">{children}</div>
        
         <Footer />
       </body>

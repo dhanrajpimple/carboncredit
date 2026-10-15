@@ -9,6 +9,7 @@ const Footer = () => {
             <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4">Marketplace</h4>
             <ul className="space-y-2 text-sm">
               <li><Link href="/seller-listings" className="text-gray-400 hover:text-emerald-400 transition-colors">Browse Farmer Listings</Link></li>
+              <li><Link href="/enterprise-ngo-tree-plantation" className="text-gray-400 hover:text-emerald-400 transition-colors">CSR &amp; NGO Tree Plantation</Link></li>
               <li><Link href="/buy-carbon-credit" className="text-gray-400 hover:text-emerald-400 transition-colors">Buyer Guide</Link></li>
               <li><Link href="/how-to-sell-carbon-credits-india" className="text-gray-400 hover:text-emerald-400 transition-colors">Sell Carbon Credits</Link></li>
               <li><Link href="/carbon-credit-registration" className="text-gray-400 hover:text-emerald-400 transition-colors">Register Farm</Link></li>

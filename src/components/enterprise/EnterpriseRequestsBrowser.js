@@ -2,46 +2,53 @@
 
 import { useEffect, useState } from "react";
 
-export default function EnterpriseRequestsBrowser() {
-  const [requests, setRequests] = useState([]);
+export default function EnterpriseRequestsBrowser({ initialRequests = [], initialTotal = 0, initialUnavailable = false }) {
+  const [requests, setRequests] = useState(initialRequests);
   const [filters, setFilters] = useState({ state: "", district: "" });
   const [page, setPage] = useState(1);
-  const [pagination, setPagination] = useState({ totalPages: 1, total: 0 });
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState("");
+  const [pagination, setPagination] = useState({ totalPages: Math.max(1, Math.ceil(initialTotal / 12)), total: initialTotal });
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(initialUnavailable ? "Requirements are temporarily unavailable. Please try again later." : "");
 
-  useEffect(() => {
+  const updateFilters = (nextFilters) => {
+    setIsLoading(true);
+    setError("");
     setPage(1);
-  }, [filters.state, filters.district]);
+    setFilters(nextFilters);
+  };
 
   useEffect(() => {
+    const controller = new AbortController();
     const fetchRequests = async () => {
-      setIsLoading(true);
-      setError("");
 
       try {
         const params = new URLSearchParams({ page: String(page) });
         if (filters.state) params.set("state", filters.state);
         if (filters.district) params.set("district", filters.district);
 
-        const response = await fetch(`/api/enterprise-requests?${params.toString()}`);
+        const response = await fetch(`/api/enterprise-requests?${params.toString()}`, { signal: controller.signal });
         const result = await response.json();
         if (!response.ok) throw new Error(result.error || "Failed to fetch requirements");
 
         setRequests(result.data || []);
+        setError("");
         setPagination({ totalPages: result.totalPages || 1, total: result.total || 0 });
       } catch (err) {
+        if (controller.signal.aborted) return;
         console.error(err);
         setError("Could not load company and NGO farmer requirements. Please try again later.");
       } finally {
-        setIsLoading(false);
+        if (!controller.signal.aborted) setIsLoading(false);
       }
     };
 
     fetchRequests();
+    return () => controller.abort();
   }, [page, filters.state, filters.district]);
 
-  const clearFilters = () => setFilters({ state: "", district: "" });
+  const clearFilters = () => {
+    if (filters.state || filters.district) updateFilters({ state: "", district: "" });
+  };
 
   return (
     <section id="company-requirements" className="bg-gray-50 py-16 scroll-mt-24" aria-labelledby="company-requirements-title">
@@ -59,8 +66,8 @@ export default function EnterpriseRequestsBrowser() {
         </div>
 
         <div className="mb-8 grid gap-4 rounded-2xl border border-gray-100 bg-white p-5 shadow-sm md:grid-cols-[1fr_1fr_auto]">
-          <input className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="Filter by state" value={filters.state} onChange={(event) => setFilters((current) => ({ ...current, state: event.target.value }))} />
-          <input className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="Filter by district" value={filters.district} onChange={(event) => setFilters((current) => ({ ...current, district: event.target.value }))} />
+          <input aria-label="Filter by state" className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="Filter by state" value={filters.state} onChange={(event) => updateFilters({ ...filters, state: event.target.value })} />
+          <input aria-label="Filter by district" className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="Filter by district" value={filters.district} onChange={(event) => updateFilters({ ...filters, district: event.target.value })} />
           <button onClick={clearFilters} className="rounded-xl border border-emerald-600 px-5 py-3 font-bold text-emerald-700 hover:bg-emerald-50">Clear</button>
         </div>
 

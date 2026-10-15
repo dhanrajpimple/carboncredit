@@ -49,6 +49,12 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16" aria-labelledby="enterprise-title">
+        <h2 id="enterprise-title" className="text-3xl font-bold text-gray-900 mb-4">Find farmers for CSR and NGO tree plantation</h2>
+        <p className="max-w-3xl text-gray-600 leading-relaxed">Companies and NGOs can publish farmer land requirements by Indian state and district for tree plantation, agroforestry and project planning. Share your acreage, timeline and project goal for a one-time ₹199 listing fee.</p>
+        <Link href="/enterprise-ngo-tree-plantation" className="inline-block mt-5 font-bold text-emerald-700 underline">Find farmer land for your plantation project</Link>
+      </section>
+
       <section className="bg-gray-50 py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-5">Important distinction</h2>

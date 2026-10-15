@@ -1,4 +1,5 @@
 import SellerListingsBrowser from "@/components/SellerListingsBrowser";
+import Link from "next/link";
 
 export const metadata = {
   title: "Farmer Carbon Project Listings in India",
@@ -37,6 +38,7 @@ export default function SellerListingsPage() {
       />
 
       <main className="bg-white min-h-screen">
+        <p className="mx-auto max-w-7xl px-4 pt-8 text-gray-700 sm:px-6 lg:px-8">Planning a company or NGO plantation project? <Link href="/enterprise-ngo-tree-plantation" className="font-semibold text-emerald-700 underline">Post your farmer land requirement or view organizations looking for farmers.</Link></p>
         <SellerListingsBrowser
           sectionId="seller-listings"
           eyebrow="Seller list only"
